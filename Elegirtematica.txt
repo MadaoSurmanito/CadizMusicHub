@@ -1,0 +1,16 @@
+FORMULARIO
+- Info Basica de la persona que va a reservar
+- Un desplegable con diferentes opciones
+- Un input para la cantidad de personas que van a usar la sala
+- Fecha
+- Pinchar cuantas horas puedes elegir
+
+Reserva de espacios en estudios de música para prácticas o grabaciones.
+https://islamusica.es/local-de-ensayo/
+https://www.facebook.com/musicaworkshop/?locale=es_ES
+https://juventud.cadiz.es/instalaciones-labascula/
+
+Meta datos
+    Nombre: Cádiz Music Hub
+    Descripción: 
+    Logo: 
