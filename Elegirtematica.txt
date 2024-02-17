@@ -13,4 +13,32 @@ https://juventud.cadiz.es/instalaciones-labascula/
 Meta datos
     Nombre: Cádiz Music Hub
     Descripción: 
-    Logo: 
+Formularios:
+	*OBLIGATORIO
+	Salas de ensayos:
+		- Info Basica de la persona que va a reservar*
+			- Nombre apellidos*
+			- Fecha Nacimiento*
+			- Correo*
+			- Telefono*
+		- Un input para la cantidad de personas que van a usar la sala*
+		- Desplegable con opciones de sala disponibles*
+		- Fecha a reservar [suponemos que abrimos todos los dias]
+		- Deplegable que muestra las horas que puedes elegir [max 3 horas, por tramos de 1h], nuestro horario: de 10 a 23 (baskula)
+		- Encuesta opcional Banda/Artista
+			- Nombre
+			- Género
+			- RRSS
+				- IG
+				- Spotify
+	Estudios de grabacion:
+		- Info Basica de la persona que va a reservar*
+			- Nombre apellidos*
+			- Fecha Nacimiento*
+			- Correo*
+			- Telefono*
+		- Un input para la cantidad de personas que van a usar la sala*
+		- Desplegable con opciones de estudio disponibles*
+		- Checkbox en donde indique si hay que poner productor musical o se trae uno propio*
+		- Fecha* [Solo se puede reservar el estudio durante 1 dia. Para más días hay que reservarlo otra vez más]
+		- Pinchar cuantas horas puedes elegir*[sin limite de tiempo más que la apertura/salida]
