@@ -1,11 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva</title>
 </head>
 <body>
-    
+    <header style="background-color: #3DBBD2;">
+        <a href="index.html"><img src="../img/LogoTransparente.png" alt="Logo" width="300" height="300"></a>
+        <nav>
+            <a href="reserva.html">Reservar</a>
+            <a href="salas.html">Espacios</a>
+            <a href="conocenos.html">Conócenos</a>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <h1>Reserva Espacio Musical</h1>
+            <img src="../img/SimboloCMHtransp.png" alt="Cádiz Music Hub" width="50" height="50">
+            <form action="#" method="post">
+                <h2>Datos Personales</h2>
+                <label for="nombre">Nombre*</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre..." required>
+                <label for="apellidos">Apellidos*</label>
+                <input type="text" name="apellidos" id="apellidos" placeholder="Indica tus apellidos..." required>
+                <label for="fechaNac">Fecha de Nacimiento</label>
+                <input type="date" name="fechaNac" id="fechaNac" required>
+                <label for="email">Correo electrónico*</label>
+                <input type="email" name="email" id="email" placeholder="ejemplo@ejemplo.com" required>
+                <label for="telefono">Teléfono*</label>
+                <input type="tel" name="telefono" id="telefono" required>
+                <h2>¿Qué espacio desea reservar?</h2>
+                <select name="tipoEs" id="tipoEs">
+                    <option value="0">Seleccione uno...</option>
+                    <option value="1">Sala de Ensayo</option>
+                    <option value="2">Estudio de Grabación</option>
+                </select>
+                <p>* <i>Este campo es obligatorio</i></p>
+                <input type="submit" value="Enviar formulario">
+            </form>
+        </div>
+    </main>
+    <footer style="background-color: #3DBBD2;">
+        <div>
+            <a href="reserva.html">Reservar</a>
+            <a href="salas.html">Espacios</a>
+            <a href="conocenos.html">Conócenos</a>
+        </div>
+        <div>
+            <p><img src="../ico/marcador.png" alt="Dirección" width="30" height="30">Av. Universidad de Cádiz, 10, 11519 Puerto Real, Cádiz</p>
+            <p><img src="../ico/voltear-el-telefono.png" alt="Teléfono" width="30" height="30">956 48 32 00</p>
+        </div>
+        <div>
+            <a href="#"><img src="../ico/twitter-alt.png" alt="X" width="30" height="30"></a>
+            <a href="https://www.instagram.com/cadiz_music_hub/"><img src="../ico/instagram.png" alt="Instagram" width="30" height="30"></a>
+            <a href="https://open.spotify.com/playlist/3CbyfgkyTiAAv9qq7VA1E2?si=3bef6c214df94572"><img src="../ico/spotify.png" alt="Spotify" width="30" height="30"></a>
+            <a href="#"><img src="../ico/facebook.png" alt="Facebook" width="30" height="30"></a>
+        </div>
+        <div>
+            <a href="conocenos.html#creditos">Créditos</a>
+        </div>
+    </footer>
 </body>
 </html>
