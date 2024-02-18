@@ -2,12 +2,17 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+    <!-- Metadatos del documento -->
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Formulario de reserva de espacio">
-    <meta name="keywords" content="Música, Ensayo, Grabación, Cádiz, Reservar, Precio">
-    <meta name="author" content="Alejandro Ramos Rodríguez, Alejandro Sanz Huerta">
-    <meta name="robots" content="index, nofollow">
+    <!-- Ajuste de la escala para dispositivos móviles -->
+    <meta name="description" content="Formulario de Reserva del ensayo">
+    <!-- Descripción del contenido -->
+    <meta name="keywords" content="Música, Ensayo, Grabación, Cádiz, Información, Reservar">
+    <!-- Palabras clave para SEO -->
+    <meta name="author" content="Alejandro Ramos Rodríguez, Alejandro Sanz Huerta"> <!-- Autor/es del documento -->
+    <meta name="robots" content="index, nofollow"> <!-- Comportamiento de los robots de búsqueda -->
+    <link rel="icon" href="../ico/SimboloCMHtransp.ico" type="image/x-icon"> <!-- Icono de la página -->
     <title>Reserva</title>
 </head>
 
@@ -63,11 +68,11 @@
                 <div id="SalaEnsayo">
                     <h2>Datos Sala</h2>
                     <!-- Campo para el número de participantes -->
-                    <label for="participantes">Nº de participantes*</label>
-                    <input type="number" name="participantes" id="participantes" required>
+                    <label for="participantesSal">Nº de participantes*</label>
+                    <input type="number" name="participantesSal" id="participantesSal" required>
                     <!-- Campo para la fecha de reserva -->
-                    <label for="fechaReserva">Fecha de reserva*</label>
-                    <input type="date" name="fechaReserva" id="fechaReserva" required>
+                    <label for="fechaReservaSal">Fecha de reserva*</label>
+                    <input type="date" name="fechaReservaSal" id="fechaReservaSal" required>
                     <!-- Campo para seleccionar la sala -->
                     <label for="sala">Sala a reservar*</label>
                     <select name="sala" id="sala">
@@ -150,13 +155,13 @@
                     <h2>Datos Estudio</h2>
                     <!-- Campo para el número de participantes -->
                     <label for="participantesEs">Nº de participantes*</label>
-                    <input type="number" name="participantesEs" id="participantes" required>
+                    <input type="number" name="participantesEs" id="participantesEs" required>
                     <!-- Campo para la fecha de reserva -->
                     <label for="fechaReservaEs">Fecha de reserva*</label>
-                    <input type="date" name="fechaReservaEs" id="fechaReserva" required>
+                    <input type="date" name="fechaReservaEs" id="fechaReservaEs" required>
                     <!-- Campo para seleccionar el estudio -->
                     <label for="estudio">Estudio a reservar*</label>
-                    <select name="estudio" id="sala">
+                    <select name="estudio" id="estudio">
                         <option value="0">Seleccione una estudio...</option>
                         <option value="1">Estudio 1</option>
                         <option value="2">Estudio 2</option>
