@@ -1,0 +1,13 @@
+/* Documento para estilos comunes de la pagina */
+/* Everything */
+p {
+	font-family: Arial;
+}
+
+h2, h3 {
+	font-family: "Alegreya Sans SC", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+/* Estilos para el encabezado */
