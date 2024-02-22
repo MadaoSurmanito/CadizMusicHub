@@ -47,21 +47,21 @@ header nav a {
 	font-weight: 500;
 	font-size: 3em;
 }
-
-/* Estilos del Footer */
-footer{
-    background-color: #038fa9;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    align-items: center;
+/* <----------------------- Estilos para el pie de pagina -----------------------> */
+footer {
+	background-color: #038fa9;
+	/* Hacer que ocupe todo el espacio restante */
+	display: flex;
+	justify-content: space-around; /* Distribuir horizontalmente */
+	text-align: center; /* Centrar texto verticalmente */
+	align-items: center; /* Centrar verticalmente */
 }
 
-footer div{
-    border-left: 2px solid white;
-    padding-left: 1em;
+footer div {
+	border-left: 2px solid white;
+	padding-left: 1em;
 }
 
-footer a{
-    font-family: Arial;
+footer a {
+	font-family: Arial;
 }
