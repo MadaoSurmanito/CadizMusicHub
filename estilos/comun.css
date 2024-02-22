@@ -11,3 +11,21 @@ h2, h3 {
 }
 
 /* Estilos para el encabezado */
+
+/* Estilos del Footer */
+footer{
+    background-color: #038fa9;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+footer div{
+    border-left: 2px solid white;
+    padding-left: 1em;
+}
+
+footer a{
+    font-family: Arial;
+}
