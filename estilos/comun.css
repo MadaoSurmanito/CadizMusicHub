@@ -1,16 +1,52 @@
 /* Documento para estilos comunes de la pagina */
-/* Everything */
+/* <----------------------- Cosas generales -----------------------> */
+/* Estilo general de los parrafos */
 p {
 	font-family: Arial;
 }
 
-h2, h3 {
+/* Estilos para los encabezados generales */
+h2,
+h3 {
+	/* fuente de google fonts */
 	font-family: "Alegreya Sans SC", sans-serif;
 	font-weight: 500;
 	font-style: normal;
 }
 
-/* Estilos para el encabezado */
+/* Quitar los subrayados de los enlaces */
+a {
+	text-decoration: none;
+}
+/* <----------------------- Estilos para el encabezado -----------------------> */
+header {
+	background-color: #3dbbd2;
+	display: flex;
+}
+header a img {
+	/* dejar margen a la izquierda y derecha */
+	margin: 0 58px;
+	/* centrar verticalmente */
+	align-self: center;
+	/* tamaño de la imagen */
+	width: 198px;
+	height: 140px;
+}
+header nav {
+	background-color: #038fa9;
+	/* Hacer que ocupe todo el espacio restante */
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-around; /* Distribuir horizontalmente */
+	align-items: center; /* Centrar verticalmente */
+}
+header nav a {
+	color: #fbf8f8;
+	/* fuente de google fonts */
+	font-family: "Alegreya Sans SC", sans-serif;
+	font-weight: 500;
+	font-size: 3em;
+}
 
 /* Estilos del Footer */
 footer{
