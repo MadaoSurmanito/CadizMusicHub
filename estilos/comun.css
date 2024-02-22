@@ -1,5 +1,5 @@
 /* Documento para estilos comunes de la pagina */
-/* Everything */
+/* Comun para todo */
 p {
 	font-family: Arial;
 }
@@ -10,4 +10,44 @@ h2, h3 {
 	font-style: normal;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* Estilos para el encabezado */
+header
+{
+    background-color: #3DBBD2;
+    display: flex;
+}
+header a img
+{
+        /* dejar 40px de margen a la izquierda y derecha, centrarla*/
+    margin: 0 40px;
+    /* centrar verticalmente */
+    align-self: center;
+    /* tamaño de la imagen */
+    width: 198px;
+    height: 140px   ;
+
+}
+header nav
+{
+    background-color: #038FA9;
+    /* Hacer que ocupe todo el espacio restante */
+    flex-grow: 1;
+}
+header nav a{
+    font-family: "Alegreya Sans SC", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+    font-size: 200%;
+    color: #FBF8F8;
+    /* centrar cada a dentro de todo el nav */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* tamaño de cada a */
+    width: 30%;
+    height: 30%;
+}
