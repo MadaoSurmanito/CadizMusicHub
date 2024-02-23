@@ -1,0 +1,48 @@
+/* Documento para estilos del index */
+/* Main a la izquierda, aside a la derecha */
+/* <----------------------- Cosas generales -----------------------> */
+
+/* Separacion entre los article */
+
+/* <----------------------- Bloque Naranja de músicos -----------------------> */
+
+/* FALTA POR HACER:
+- Que sea responsive en funcion del zoom
+- Tamaño h2
+*/
+.bloqueNaranja {
+	display: flex;
+	/* Centrar */
+	align-items: center;
+	/* Distribuir titulo y #bandas verticalmente */
+	flex-direction: column;
+}
+
+.bloqueNaranja #bandas {
+	display: flex;
+	/* Distribuir los .banda horizontalmente */
+	justify-content: space-around;
+}
+
+.banda {
+	display: flex; 
+	margin: 1em; /* Separacion entre las bandas */  
+	/* Distribuir verticalmente */
+	flex-direction: column;
+    /* Centrar */
+	align-items: center;
+}
+
+.banda h3
+{
+    font-size: 2em;
+}
+
+
+.banda img {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%; /* Hacer la imagen redonda */
+	/* Agregar sombra, prototipo: X-Y-Blur-Color */
+	box-shadow: 0 10px 4px rgba(0, 0, 0, 0.25);
+}

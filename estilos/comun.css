@@ -4,7 +4,6 @@
 p {
 	font-family: Arial;
 }
-
 /* Estilos para los encabezados generales */
 h2,
 h3 {
@@ -13,10 +12,22 @@ h3 {
 	font-weight: 500;
 	font-style: normal;
 }
-
 /* Quitar los subrayados de los enlaces */
 a {
 	text-decoration: none;
+}
+/* Fondo de la pagina estandar */
+body {
+	background-color: #FBF8F8;
+}
+/* Cajitas naranjas*/
+.bloqueNaranja {
+	background-color: #ffb46c;
+	padding: 1em;
+	margin: 1em;
+	/*Esquinas redondeadas*/
+	border-radius: 20px;
+
 }
 /* <----------------------- Estilos para el encabezado -----------------------> */
 header {
@@ -65,3 +76,4 @@ footer div {
 footer a {
 	font-family: Arial;
 }
+/* <----------------------- Estilo del botón flotante -----------------------> */
