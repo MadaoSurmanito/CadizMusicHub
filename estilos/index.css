@@ -2,6 +2,14 @@
 /* Main a la izquierda, aside a la derecha */
 /* <----------------------- Cosas generales -----------------------> */
 
+/* Dividir la pagina en dos bloques, un main a la izquierda y los aside a la derecha
+   El main ocupa 2/3 del ancho y el aside 1/3 */
+
+
+
+
+
+
 /* Separacion entre los article */
 
 /* <----------------------- Bloque Naranja de músicos -----------------------> */
@@ -25,24 +33,47 @@
 }
 
 .banda {
-	display: flex; 
-	margin: 1em; /* Separacion entre las bandas */  
+	display: flex;
+	margin: 1em;
+	/* Separacion entre las bandas */
 	/* Distribuir verticalmente */
 	flex-direction: column;
-    /* Centrar */
+	/* Centrar */
 	align-items: center;
 }
 
-.banda h3
-{
-    font-size: 2em;
+.bloqueNaranja h2 {
+	font-size: 3em;
 }
 
+/* Sombreado del texto */
+.banda h3,
+.bloqueNaranja h2 {
+	/* Agregar sombra, prototipo: X-Y-Blur-Color */
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.banda h3 {
+	font-size: 2em;
+}
 
 .banda img {
 	width: 200px;
 	height: 200px;
-	border-radius: 50%; /* Hacer la imagen redonda */
+	border-radius: 50%;
+	/* Hacer la imagen redonda */
+	/* Agregar sombra, prototipo: X-Y-Blur-Color */
+	box-shadow: 0 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* <----------------------- Iframes del aside -----------------------> */
+
+aside iframe {
+	width: 320px;
+	height: 440px;
+	border-radius: 20px;
+	/* hacer que no se vea el borde */
+	border: none;
 	/* Agregar sombra, prototipo: X-Y-Blur-Color */
 	box-shadow: 0 10px 4px rgba(0, 0, 0, 0.25);
 }
