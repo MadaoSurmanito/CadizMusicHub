@@ -1,6 +1,10 @@
 /* Documento para estilos comunes de la pagina */
 /* <----------------------- Cosas generales -----------------------> */
 /* Estilo general de los parrafos */
+body, html {
+    margin: 0;
+}
+
 p {
 	font-family: Arial;
 }
@@ -14,9 +18,10 @@ h3 {
 	font-style: normal;
 }
 
-.encabezadoMarca{
+.encabezadoMarca {
 	font-family: "Station No.2 W00 No.2";
 	color: #fbf8f8;
+	font-size: 3em;
 }
 
 /* Quitar los subrayados de los enlaces */
@@ -29,6 +34,18 @@ body {
 	background-color: #FBF8F8;
 }
 
+/* Iframe estandard */
+iframe {
+	width: 320px;
+	height: 440px;
+	border-radius: 20px;
+	/* hacer que no se vea el borde */
+	border: none;
+	/* Agregar sombra, prototipo: X-Y-Blur-Spread-Color */
+	box-shadow: 0 5px 4.7px 2px rgba(0, 0, 0, 0.25);
+	margin: 1em;
+}
+
 /* Bloques naranjas */
 .bloqueNaranja {
 	background-color: #ffb46c;
@@ -38,7 +55,7 @@ body {
 	border-radius: 20px;
 }
 
-/* Bloques blancos */
+/* <----------------------- Bloques blancos -----------------------> */
 .bloqueBlanco h2,
 .bloqueBlanco h3 {
 	color: #1CA9C3;
@@ -50,26 +67,15 @@ body {
 }
 
 .bloqueBlanco h3 {
-	font-size: 2em;
+	font-size: 3em;
 	text-align: center;
 }
 
 .bloqueBlanco p {
-	font-size: 1em;
+	font-size: 1.375em;
 	width: 450px;
 	text-align: center;
 
-}
-
-iframe {
-	width: 320px;
-	height: 440px;
-	border-radius: 20px;
-	/* hacer que no se vea el borde */
-	border: none;
-	/* Agregar sombra, prototipo: X-Y-Blur-Spread-Color */
-	box-shadow: 0 5px 4.7px 2px rgba(0, 0, 0, 0.25);
-	margin: 1em;
 }
 
 /* <----------------------- Estilos para el encabezado -----------------------> */
@@ -136,7 +142,6 @@ footer div {
 #informacionF {
 	flex-direction: column;
 }
-
 
 footer a {
 	font-family: Arial;
