@@ -13,3 +13,7 @@ iframe {
     width: 515px;
     height: 371px;
 }
+
+.bloqueNaranja{
+    display: flex;
+}

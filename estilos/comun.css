@@ -34,19 +34,22 @@ body {
 }
 
 /* Bloques blancos */
-.bloqueBlanco h2, .bloqueBlanco h3{
+.bloqueBlanco h2,
+.bloqueBlanco h3 {
 	color: #1CA9C3;
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.bloqueBlanco h2{
+
+.bloqueBlanco h2 {
 	font-size: 3em;
 }
-.bloqueBlanco h3{
+
+.bloqueBlanco h3 {
 	font-size: 2em;
 	text-align: center;
 }
 
-.bloqueBlanco p{
+.bloqueBlanco p {
 	font-size: 1em;
 	width: 450px;
 	text-align: center;
@@ -68,6 +71,8 @@ iframe {
 header {
 	background-color: #3dbbd2;
 	display: flex;
+	/* hacer que no queden margenes */
+	margin: 0;
 }
 
 header a img {
@@ -117,26 +122,26 @@ footer {
 }
 
 footer div {
-	border-left: 2px solid white;
-	padding-left: 1em;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
 
-#informacionF{
+#informacionF {
 	flex-direction: column;
 }
 
-footer div:first-child
-{
-	border: none;
-}
 
 footer a {
 	font-family: Arial;
 	margin: 0.7em;
 	color: #fbf8f8;
+}
+
+.spacerFooter {
+	align-self: center;
+	height: 96px;
+	width: 4px;
 }
 
 /* <----------------------- Estilo del botón flotante -----------------------> */
