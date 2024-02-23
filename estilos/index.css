@@ -1,9 +1,11 @@
 /* Documento para estilos del index */
-/* Main a la izquierda, aside a la derecha */
 /* <----------------------- Cosas generales -----------------------> */
 
-/* Dividir la pagina en dos bloques, un main a la izquierda y los aside a la derecha
-   El main ocupa 2/3 del ancho y el aside 1/3 */
+/* Dividir la pagina en dos bloques, un main a la izquierda y los aside a la derecha*/
+main 
+{
+	display: flex;
+}
 
 
 
@@ -11,6 +13,46 @@
 
 
 /* Separacion entre los article */
+
+/* <----------------------- Bloque Blanco Nuestros servicios -----------------------> */
+.bloqueBlanco {
+	display: flex;
+	/* Centrar */
+	align-items: center;
+	/* distribuir verticalmente */
+	flex-direction: column;
+	
+
+}
+
+.bloqueBlanco #servicios {
+	display: flex;
+
+}
+
+#servicios article {
+	margin: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* centrar */
+	justify-content: center;
+	/* Separacion entre elementos */
+
+
+
+
+}
+#servicios article p{
+
+	/*tamaño de los parrafos*/
+	width: 450px;
+
+	font-size: 1em;
+	/* centrar */
+	text-align: center;
+}
+
 
 /* <----------------------- Bloque Naranja de músicos -----------------------> */
 
@@ -49,7 +91,7 @@
 /* Sombreado del texto */
 .banda h3,
 .bloqueNaranja h2 {
-	/* Agregar sombra, prototipo: X-Y-Blur-Color */
+	/* Agregar sombra, prototipo: X-Y-Blur-Spread-Color */
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -62,18 +104,9 @@
 	height: 200px;
 	border-radius: 50%;
 	/* Hacer la imagen redonda */
-	/* Agregar sombra, prototipo: X-Y-Blur-Color */
+	/* Agregar sombra, prototipo: X-Y-Blur-Spread-Color */
 	box-shadow: 0 10px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* <----------------------- Iframes del aside -----------------------> */
 
-aside iframe {
-	width: 320px;
-	height: 440px;
-	border-radius: 20px;
-	/* hacer que no se vea el borde */
-	border: none;
-	/* Agregar sombra, prototipo: X-Y-Blur-Color */
-	box-shadow: 0 10px 4px rgba(0, 0, 0, 0.25);
-}

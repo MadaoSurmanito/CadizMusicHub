@@ -1,0 +1,15 @@
+/* Documento para estilos del conocenos.html */
+.bloqueBlanco {
+    margin: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* centrar */
+    justify-content: center;
+    /* Separacion entre elementos */
+}
+
+iframe {
+    width: 515px;
+    height: 371px;
+}
