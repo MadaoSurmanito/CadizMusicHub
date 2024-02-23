@@ -8,10 +8,6 @@ main
 }
 
 
-
-
-
-
 /* Separacion entre los article */
 
 /* <----------------------- Bloque Blanco Nuestros servicios -----------------------> */
@@ -23,6 +19,26 @@ main
 	flex-direction: column;
 	
 
+}
+
+#carouselExampleCaptions{
+	margin: 1em;
+	margin-bottom: 0em;
+}
+
+#carouselExampleCaptions img{
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+#articulo1 .bloqueNaranja{
+	margin-top: 0;
+	border-top-left-radius: 0%;
+	border-top-right-radius: 0%;
+}
+
+#articulo1 h2, #articulo1 p{
+	display: inline;
 }
 
 .bloqueBlanco #servicios {
@@ -38,9 +54,6 @@ main
 	/* centrar */
 	justify-content: center;
 	/* Separacion entre elementos */
-
-
-
 
 }
 #servicios article p{
