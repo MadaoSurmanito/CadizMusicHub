@@ -1,8 +1,9 @@
 /* Documento para estilos comunes de la pagina */
 /* <----------------------- Cosas generales -----------------------> */
 /* Estilo general de los parrafos */
-body, html {
-    margin: 0;
+body,
+html {
+	margin: 0;
 }
 
 p {
@@ -31,7 +32,7 @@ a {
 
 /* Fondo de la pagina estandar */
 body {
-	background-color: #FBF8F8;
+	background-color: #fbf8f8;
 }
 
 /* Iframe estandard */
@@ -54,11 +55,18 @@ iframe {
 	/*Esquinas redondeadas*/
 	border-radius: 20px;
 }
+.bloqueNaranja h2,
+.bloqueNaranja p {
+	display: inline;
+}
 
+.bloqueNaranja > div {
+	margin: 1em;
+}
 /* <----------------------- Bloques blancos -----------------------> */
 .bloqueBlanco h2,
 .bloqueBlanco h3 {
-	color: #1CA9C3;
+	color: #1ca9c3;
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -75,7 +83,6 @@ iframe {
 	font-size: 1.375em;
 	width: 450px;
 	text-align: center;
-
 }
 
 /* <----------------------- Estilos para el encabezado -----------------------> */
@@ -113,7 +120,6 @@ header nav a {
 	font-family: "Alegreya Sans SC", sans-serif;
 	font-weight: 500;
 	font-size: 3em;
-
 }
 
 /* <----------------------- Estilos para el pie de pagina -----------------------> */
@@ -122,15 +128,10 @@ footer {
 	color: #fbf8f8;
 	/* Hacer que ocupe todo el espacio restante */
 	display: flex;
-	justify-content: space-around;
-	/* Distribuir horizontalmente */
-	text-align: center;
-	/* Centrar texto verticalmente */
-	align-items: center;
-	/* Centrar verticalmente */
-	flex-direction: row;
 	justify-content: space-evenly;
-	align-items: stretch;
+	margin-top: 1em;
+	/*Dejar menos margen entre los elementos*/
+	padding: 1em 0;
 }
 
 footer div {
@@ -140,6 +141,7 @@ footer div {
 }
 
 #informacionF {
+	display: flex;
 	flex-direction: column;
 }
 
@@ -154,7 +156,18 @@ footer a {
 	height: 96px;
 	width: 4px;
 }
-
+#informacionF img {
+	width: 18px;
+	height: 18px;
+}
+#informacionF p {
+	margin-top: none;
+	margin-bottom: none;
+}
+.iconoFooter img {
+	height: 28px;
+	width: 28px;
+}
 /* <----------------------- Estilo del botón flotante -----------------------> */
 .botonSubir {
 	/* Posicion fija */

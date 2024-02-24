@@ -16,4 +16,6 @@ iframe {
 
 .bloqueNaranja{
     display: flex;
+    /* distribuir elementos en todo el espacio */
+    justify-content: space-around;
 }
