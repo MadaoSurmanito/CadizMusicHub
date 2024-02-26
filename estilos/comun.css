@@ -39,6 +39,12 @@ body {
 }
 
 /* Bloques blancos */
+.bloqueBlanco{
+	background-color: #FBF8F8;
+	border-radius: 20px;
+	padding: 1em;
+	margin: 1em;
+}
 .bloqueBlanco h2,
 .bloqueBlanco h3 {
 	color: #1CA9C3;

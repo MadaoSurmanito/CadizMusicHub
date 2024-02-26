@@ -1,3 +1,43 @@
+.bloqueAmarillo{
+    background-color: #FFC546;
+	padding: 1em;
+	margin: 1em;
+	/*Esquinas redondeadas*/
+	border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+}
 
+.formulario{
+    background-color: #FBF8F8;
+	border-radius: 20px;
+	padding: 1em;
+	margin: 1em;
+}
 
+.formulario input{
+    border-radius: 5px;
+}
 
+.bloqueFormulario{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.bloqueFormulario>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.bloqueFormulario>div>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+input[type=submit]{
+    background-color: red;
+    color: white;
+}

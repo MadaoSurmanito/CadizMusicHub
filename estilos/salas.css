@@ -1,0 +1,41 @@
+#enlaces{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#enlaces>a{
+    color: #1CA9C3;
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Alegreya Sans SC", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+    font-size: 1.5em;
+}
+
+#main>div+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 1em;
+}
+
+#ensayo, #grabacion{
+    display: flex;
+    flex-direction: row;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th, td{
+   border: 2px black solid;
+   padding: 1em;
+}
+
+thead, tbody tr:nth-child(even){
+    background-color: #b3b3b3;
+}

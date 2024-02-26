@@ -19,6 +19,7 @@
   <!-- Icono de la página -->
   <title>CMH Espacios disponibles</title>
   <link rel="stylesheet" href="../estilos/comun.css" />
+  <link rel="stylesheet" href="../estilos/salas.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&display=swap" rel="stylesheet" />
@@ -43,10 +44,10 @@
   </header>
   <main id="main">
     <!-- Contenido principal de la página -->
-    <div>
+    <div id="enlaces">
       <!-- Enlaces para ir a las secciones -->
-      <a href="#ensayo">Ir a Salas de Ensayo</a>
-      <a href="#grabacion">Ir a Estudios de Grabación</a>
+      <a href="#ensayo" class="bloqueNaranja">Ir a Salas de Ensayo</a>
+      <a href="#grabacion" class="bloqueNaranja">Ir a Estudios de Grabación</a>
     </div>
     <!-- Contenedor de texto general y secciones -->
     <div>
@@ -59,9 +60,9 @@
       </p>
       <!-- Sección de Salas de Ensayo -->
       <article id="ensayo" class="bloqueNaranja">
-
         <!-- Título -->
-        <h2>Salas de Ensayo</h2>
+        <div>
+          <h2>Salas de Ensayo</h2>
         <!-- Descripción -->
         <p>
           Contamos con una gran variedad de salas de ensayo repartidas en
@@ -70,8 +71,9 @@
           nos proveen sus productos. Además, contamos con salas totalmente
           vacías para que puedas traer tu equipo personal.
         </p>
+        </div>
         <!-- Imagen -->
-        <img src="../img/Instalaciones-La-Bascula-SalaEnsayo4.jpg" alt="Sala de Ensayo" />
+        <img src="../img/Instalaciones-La-Bascula-SalaEnsayo4.jpg" alt="Sala de Ensayo" width="450" height="300" />
       </article>
       <!-- Tabla de datos para Salas de Ensayo -->
       <table>
@@ -122,7 +124,8 @@
       <!-- Sección de Estudios de Grabación -->
       <article id="grabacion" class="bloqueNaranja">
         <!-- Título -->
-        <h2>Estudios de Grabación</h2>
+        <div>
+          <h2>Estudios de Grabación</h2>
         <!-- Descripción -->
         <p>
           Cada estudio viene equipado con la tecnología adecuada para producir
@@ -131,8 +134,9 @@
           muchas variedades de micrófonos. Además, contamos con profesionales
           del sector que podrán asesorarte en caso de que lo necesites.
         </p>
+        </div>
         <!-- Imagen -->
-        <img src="../img/R.jfif" alt="Estudio de Grabación" />
+        <img src="../img/R.jfif" alt="Estudio de Grabación" width="400" height="300" />
       </article>
       <!-- Tabla de datos para Estudios de Grabación -->
       <table>
@@ -186,6 +190,7 @@
   <footer>
     <!-- Primer bloque de enlaces de navegación en el pie de página -->
     <div>
+      <a href="index.html">Inicio</a>
       <!-- Enlace a la página de reservas -->
       <a href="reserva.html">Reservar</a>
       <!-- Enlace a la página de salas -->

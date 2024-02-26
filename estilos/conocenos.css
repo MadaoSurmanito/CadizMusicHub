@@ -17,3 +17,7 @@ iframe {
 .bloqueNaranja{
     display: flex;
 }
+
+#creditos{
+    flex-direction: column;
+}
