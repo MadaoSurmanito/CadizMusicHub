@@ -6,20 +6,7 @@ main
 {
 	display: flex;
 }
-
-
-/* Separacion entre los article */
-
-/* <----------------------- Bloque Blanco Nuestros servicios -----------------------> */
-.bloqueBlanco {
-	display: flex;
-	/* Centrar */
-	align-items: center;
-	/* distribuir verticalmente */
-	flex-direction: column;
-	
-
-}
+/* <----------------------- Bloque Naranja con carrusel de fotos -----------------------> */
 
 #carouselExampleCaptions{
 	margin: 1em;
@@ -30,20 +17,29 @@ main
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 }
-
-#articulo1 .bloqueNaranja{
+#art1 .bloqueNaranja{
 	margin-top: 0;
 	border-top-left-radius: 0%;
 	border-top-right-radius: 0%;
 }
 
-#articulo1 h2, #articulo1 p{
-	display: inline;
+
+/* <----------------------- Bloque Blanco Nuestros servicios -----------------------> */
+.bloqueBlanco {
+	display: flex;
+	/* Centrar */
+	align-items: center;
+	/* distribuir verticalmente */
+	flex-direction: column;
+	
 }
 
+.bloqueBlanco img {
+    width: 191px;
+    height: 191px;
+}
 .bloqueBlanco #servicios {
 	display: flex;
-
 }
 
 #servicios article {
@@ -61,11 +57,10 @@ main
 	/*tamaño de los parrafos*/
 	width: 450px;
 
-	font-size: 1em;
+	font-size: 1.375em;
 	/* centrar */
 	text-align: center;
 }
-
 
 /* <----------------------- Bloque Naranja de músicos -----------------------> */
 
@@ -109,12 +104,13 @@ main
 }
 
 .banda h3 {
-	font-size: 2em;
+	font-size: 2.25em;
+    margin-top: 0.5em;
 }
 
 .banda img {
-	width: 200px;
-	height: 200px;
+	width: 191px;
+	height: 191px;
 	border-radius: 50%;
 	/* Hacer la imagen redonda */
 	/* Agregar sombra, prototipo: X-Y-Blur-Spread-Color */
