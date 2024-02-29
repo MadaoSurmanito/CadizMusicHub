@@ -18,6 +18,7 @@
   <link rel="icon" href="../ico/SimboloCMHtransp.ico" type="image/x-icon" />
   <!-- Icono de la página -->
   <title>Reserva</title>
+  <script src="../js/form.js"></script>
   <link rel="stylesheet" href="../estilos/comun.css" />
   <link rel="stylesheet" href="../estilos/formulario.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -90,7 +91,7 @@
             <option value="2">Estudio de Grabación</option>
           </select>
           <!-- Sección para los detalles de la reserva de la Sala de Ensayo -->
-          <div id="SalaEnsayo" class="bloqueFormulario">
+          <div id="SalaEnsayo" class="bloqueFormulario" style="display: none;">
             <h2>Datos Sala</h2>
             <!-- Campo para el número de participantes -->
             <label for="participantesSal">Nº de participantes*</label>
@@ -176,7 +177,7 @@
             <input type="text" name="spotify" id="spotify" />
           </div>
           <!-- Sección para los datos de reserva de Estudio de Grabación -->
-          <div id="Grabacion" class="bloqueFormulario">
+          <div id="Grabacion" class="bloqueFormulario" style="display: none;">
             <h2>Datos Estudio</h2>
             <!-- Campo para el número de participantes -->
             <label for="participantesEs">Nº de participantes*</label>
@@ -257,7 +258,7 @@
             <p>Coste total: Lorem €</p>
           </div>
           <!-- Nota sobre campos obligatorios -->
-          <p>
+          <p id="problemas">
             *
             <i>Este campo es obligatorio</i>
           </p>
