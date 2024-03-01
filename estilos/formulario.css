@@ -1,142 +1,167 @@
 /* Documento para estilos del formulario */
+/* <----------------------- Estilos generales -----------------------> */
+/* titulo del formulario*/
+h1 {
+	font-size: 3em;
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	margin: 0px;
+}
+
+/* titulos de las preguntas del formulario */
+h2 {
+	font-size: 2em;
+	margin: 0px;
+	margin-bottom: 0.5em;
+}
 /* <----------------------- Bloque amarillo del formulario -----------------------> */
 .bloqueAmarillo {
-    background-color: #FFC546;
-    padding: 1em;
-    margin: 1em;
-    /*Esquinas redondeadas*/
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    /*centrar logo y bloque blanco*/
+	background-color: #ffc546;
+	padding: 1em;
+	margin: 1em;
+	/*Esquinas redondeadas*/
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	/*centrar logo y bloque blanco*/
 }
 
 /* tamaño del logo*/
 .bloqueAmarillo img {
-    width: 244px;
-    height: 244px;
+	width: 244px;
+	height: 244px;
 }
-
 
 /* <----------------------- Bloque blanco del formulario -----------------------> */
 /* hacer que el bloque blanco ocupe el resto del espacio*/
-.bloqueAmarillo>div {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
+.bloqueAmarillo > div {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	align-items: center;
 }
 
-/* titulo del formulario*/
-h1 {
-    font-size: 3em;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 0px;
+#formulario {
+	background-color: #fbf8f8;
+	border-radius: 20px;
+	padding: 3em;
+	margin: 1em;
+	/* hacer que ocupe todo el ancho del bloque blanco*/
+	width: 80%;
 }
-
-h2 {
-    font-size: 2em;
-    margin: 0px;
-    margin-bottom: 0.5em;
-}
-
-.formulario {
-    background-color: #FBF8F8;
-    border-radius: 20px;
-    padding: 3em;
-    margin: 1em;
-    /* hacer que ocupe todo el ancho del bloque blanco*/
-    width: 80%;
-}
-
+/* <----------------------- Subdivision del formulario -----------------------> */
+/* Bloque de formulario preguntas de un mismo tipo */
 .bloqueFormulario {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin-bottom: 1em;
-    border-bottom-color: black;
-    border-bottom: 1px solid;
-
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	margin-bottom: 1em;
+	border-bottom-color: black;
+	border-bottom: 1px solid;
 }
-
+/* Titulo de las preguntas */
 .bloqueFormulario label,
 .bloqueFormulario th {
-    font-family: arial;
-    font-size: 1.2em;
+	font-family: arial;
+	font-size: 1.2em;
 }
 
 /* Que no este en negrita el titulo de la tabla */
 .bloqueFormulario th {
-    font-weight: normal;
+	font-weight: normal;
 }
-
+/* Estilo de las partes rellenables del formulario */
 .bloqueFormulario input,
 .bloqueFormulario select {
-    border-radius: 11px;
-    background-color: #D9D9D9;
-    border: none;
-    /* Hacer que todos los input tengan siempre el mismo tamaño*/
-
-    padding: 1em;
-    padding-right: 2em;
-    margin-right: 1em;
-    margin-bottom: 1em;
+	border-radius: 11px;
+	background-color: #d9d9d9;
+	border: none;
+	padding: 1em;
+	padding-right: 2em;
+	margin-right: 1em;
+	margin-bottom: 1em;
 }
-
-.bloqueFormulario>div {
+.bloqueFormulario div>div>div{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    align-items: center;
 }
 
-.bloqueFormulario>div>div {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.bloqueFormulario input[type=checkbox] {
+    cursor: pointer;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    /* no repetir la imagen */
+    background-repeat: no-repeat;
+    /* centrar la imagen */
+    background-position: center;
+    appearance: none;
+    border: 2px solid #d9d9d9;
+    transition: background-color 0.3s ease-in-out;
+    margin: 0px;
+    margin-left: 1em;
+    width: 16px;
+    height: 16px;
+    
 }
-.bloqueFormulario p{
-    margin: 0;
-    margin-bottom: 1em;
+.bloqueFormulario input[type=checkbox]:checked{
+    background-color: #d9d9d9;
+  }
+/* Poner los bloques del formulario en fila */
+.bloqueFormulario > div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
-#SubPrecio
-{
-    font-size: 0.7em;
+/* Poner los bloques del formulario en columna */
+.bloqueFormulario > div > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+/* Parrafo extras del formulario */
+.bloqueFormulario p {
+	margin: 0;
+	margin-bottom: 1em;
+}
+/* Coste de sala / estudio*/
+.SubPrecio {
+	font-size: 0.7em;
 }
 /* <----------------------- Formato de la tabla -----------------------> */
 .TablaHorarios {
-    display: flex;
-    flex-direction: column;
-    border-collapse: collapse;
-    width: 100%;
-    margin-left: 1em;
-    
+	display: flex;
+	flex-direction: column;
+	border-collapse: collapse;
+	width: 100%;
+	margin-left: 1em;
 }
 .TablaHorarios td {
-    border: 1px black solid;
-    text-align: center;
-    width: 100%;
+	border: 1px black solid;
+	text-align: center;
+    background-color: #f0f0f0;
 }
 
-
-.TablaHorarios tbody{
-    
+.TablaHorarios button {
+	color: black;
+	border: none;
+	padding-left: 10em;
+	padding-right: 10em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-size: 0.7em;
 }
-.TablaHorarios button{
-    background-color: #F0F0F0;
-    color: black;
-    border: none;
-    padding: 0.5em;
-    padding-left: 10em;
-    padding-right: 10em;
-    border-radius: 11px;
-    font-size: 0.7em;
-    ;
+.TablaHorarios button:hover {
+	background-color: green;
+	color: #f0f0f0;
 }
-
-input[type=submit] {
-    background-color: #FF6453;
-    color: white;
-    border: none;
-    padding: 1em;
-    border-radius: 11px;
+.TablaHorarios td:hover {
+	background-color: green;
+	color: #f0f0f0;
+}
+/* <----------------------- Boton de enviar -----------------------> */
+input[type="submit"] {
+	background-color: #ff6453;
+	color: white;
+	border: none;
+	padding: 1em;
+	border-radius: 11px;
 }

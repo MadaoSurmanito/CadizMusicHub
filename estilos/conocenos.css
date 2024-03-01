@@ -1,23 +1,73 @@
 /* Documento para estilos del conocenos.html */
 .bloqueBlanco {
-    margin: 1em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* centrar */
-    justify-content: center;
-    /* Separacion entre elementos */
+	margin: 1em;
+	display: flex;
+	flex-direction: row;
+	/* centrar */
+	align-items: center;
+	/* Separacion entre elementos */
+	justify-content: space-around;
+	border-bottom: black 1px solid;
+	border-radius: 0px;
 }
-
+.bloqueBlanco > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.bloqueBlanco h3 {
+	margin-top: 0em;
+}
+.bloqueBlanco > div > p {
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
 iframe {
-    width: 515px;
-    height: 371px;
+	width: 31.938em;
+	height: 23.188em;
 }
 
-.bloqueNaranja{
-    display: flex;
+.bloqueNaranja {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
-
-#creditos{
-    flex-direction: column;
+.bloqueNaranja > div {
+	width: 31.938em;
+}
+.bloqueNaranja h2 {
+	/* Agregar sombra, prototipo: X-Y-Blur-Spread-Color */
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.bloqueNaranja p {
+	font-size: 1.375em;
+	/*interlineado*/
+	line-height: 1.25em;
+}
+#creditos {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-items: center;
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+#creditos > h3 {
+	/* Arial 40px */
+	font-size: 2.5em;
+	font-family: Arial;
+	margin: 0px;
+}
+#creditos p {
+	font-size: 1.25em;
+	font-family: Arial;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#creditos > div {
+	/* centrar los elementos */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }

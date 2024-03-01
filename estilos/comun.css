@@ -5,11 +5,16 @@ body,
 html {
 	margin: 0;
 }
-
 p {
 	font-family: Arial;
 }
-
+/* Al utilizar Boostrap se aplicaba un estilo que hacia que las imagenes */
+/* descolocasen el header y el footer */
+/* Esto lo soluciona */
+img,
+svg {
+	vertical-align: middle;
+}
 /* Estilos para los encabezados generales */
 h1,
 h2,
@@ -63,13 +68,13 @@ iframe {
 	display: inline;
 }
 
-.bloqueNaranja>div {
+.bloqueNaranja > div {
 	margin: 1em;
 }
 
 /* <----------------------- Bloques blancos -----------------------> */
 .bloqueBlanco {
-	background-color: #FBF8F8;
+	background-color: #fbf8f8;
 	border-radius: 20px;
 	padding: 1em;
 	margin: 1em;
@@ -134,7 +139,9 @@ header nav a {
 	font-weight: 500;
 	font-size: 3em;
 }
-
+header nav a:hover {
+	color: #ffb46c;
+}
 /* <----------------------- Estilos para el Footer -----------------------> */
 footer {
 	background-color: #038fa9;

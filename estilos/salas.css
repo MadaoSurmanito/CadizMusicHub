@@ -1,42 +1,86 @@
-#enlaces{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+/* Documento para estilos comunes de la pagina */
+/* <----------------------- Enlaces de navegacion -----------------------> */
+#enlaces {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 
-#enlaces>a{
-    color: #1CA9C3;
+#enlaces > a {
+	color: #1ca9c3;
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: "Alegreya Sans SC", sans-serif;
-	font-weight: 500;
+	font-family: "Alegreya Sans SC", sans-serif;
 	font-style: normal;
-    font-size: 1.5em;
+	font-size: 2em;
 }
 
-#main>div+div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 1em;
+#enlaces > a:hover {
+	color: #038fa9;
 }
 
-#ensayo, #grabacion{
-    display: flex;
-    flex-direction: row;
+#enlaces > .bloqueNaranja {
+	background-color: #ffcc9c;
+	margin: 1em;
 }
 
-table{
-    border-collapse: collapse;
-    margin: 1em;
+main > div + div {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: ce-ce;
+	margin-bottom: 1em;
 }
 
-th, td{
-   border: 2px black solid;
-   padding: 1em;
+main p {
+	font-size: 1.375em;
+	width: 50em;
+	text-align: center;
+	margin-bottom: 0px;
+	align-self: center;
 }
 
-thead, tbody tr:nth-child(even){
-    background-color: #b3b3b3;
+main .bloqueNaranja {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+.bloqueNaranja > div {
+	background-color: white;
+	border-radius: 20px;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+}
+.bloqueNaranja > div > p {
+	width: 20em;
+}
+.bloqueNaranja h2 {
+	color: #1ca9c3;
+	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	margin-bottom: 0px;
+	font-size: 3em;
+	align-self: center;
+	margin-top: 0px;
+}
+.bloqueNaranja img {
+    width: 450px;
+    height: 300px;
+    border-radius: 20px;
+}
+table {
+	border-collapse: collapse;
+	margin: 1em;
+}
+
+th,
+td {
+	border: 2px black solid;
+	padding: 1em;
+}
+
+thead,
+tbody tr:nth-child(even) {
+	background-color: #b3b3b3;
 }
