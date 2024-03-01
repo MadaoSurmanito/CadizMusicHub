@@ -1,62 +1,63 @@
 /* Documento para estilos del index */
 /* <----------------------- Cosas generales -----------------------> */
-
-/* Dividir la pagina en dos bloques, un main a la izquierda y los aside a la derecha*/
-main 
-{
+/* Dividir la pagina en dos bloques,
+un main a la izquierda y los aside a la derecha*/
+main {
 	display: flex;
 }
+
 /* <----------------------- Bloque Naranja con carrusel de fotos -----------------------> */
 
-#carouselExampleCaptions{
+#carouselExampleCaptions {
 	margin: 1em;
 	margin-bottom: 0em;
 }
 
-#carouselExampleCaptions img{
+#carouselExampleCaptions img {
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 }
-#art1 .bloqueNaranja{
+
+#art1 .bloqueNaranja {
 	margin-top: 0;
 	border-top-left-radius: 0%;
 	border-top-right-radius: 0%;
 }
 
-
-/* <----------------------- Bloque Blanco Nuestros servicios -----------------------> */
+/* <----------------------- Bloque Blanco "Nuestros servicios" -----------------------> */
 .bloqueBlanco {
 	display: flex;
 	/* Centrar */
 	align-items: center;
 	/* distribuir verticalmente */
 	flex-direction: column;
-	
 }
 
 .bloqueBlanco img {
-    width: 191px;
-    height: 191px;
+	width: 191px;
+	height: 191px;
 }
+
 .bloqueBlanco #servicios {
 	display: flex;
+	/* Separacion entre los articulos */
+	justify-content: space-around;
+	
 }
 
 #servicios article {
 	margin: 1em;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	/* centrar */
-	justify-content: center;
+	align-items: center;
 	/* Separacion entre elementos */
 
 }
-#servicios article p{
 
+#servicios article p {
 	/*tamaño de los parrafos*/
 	width: 450px;
-
 	font-size: 1.375em;
 	/* centrar */
 	text-align: center;
@@ -105,7 +106,7 @@ main
 
 .banda h3 {
 	font-size: 2.25em;
-    margin-top: 0.5em;
+	margin-top: 0.5em;
 }
 
 .banda img {
@@ -118,4 +119,3 @@ main
 }
 
 /* <----------------------- Iframes del aside -----------------------> */
-

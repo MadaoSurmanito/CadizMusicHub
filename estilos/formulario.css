@@ -1,43 +1,142 @@
-.bloqueAmarillo{
+/* Documento para estilos del formulario */
+/* <----------------------- Bloque amarillo del formulario -----------------------> */
+.bloqueAmarillo {
     background-color: #FFC546;
-	padding: 1em;
-	margin: 1em;
-	/*Esquinas redondeadas*/
-	border-radius: 20px;
+    padding: 1em;
+    margin: 1em;
+    /*Esquinas redondeadas*/
+    border-radius: 20px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    /*centrar logo y bloque blanco*/
 }
 
-.formulario{
+/* tamaño del logo*/
+.bloqueAmarillo img {
+    width: 244px;
+    height: 244px;
+}
+
+
+/* <----------------------- Bloque blanco del formulario -----------------------> */
+/* hacer que el bloque blanco ocupe el resto del espacio*/
+.bloqueAmarillo>div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+}
+
+/* titulo del formulario*/
+h1 {
+    font-size: 3em;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0px;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 0px;
+    margin-bottom: 0.5em;
+}
+
+.formulario {
     background-color: #FBF8F8;
-	border-radius: 20px;
-	padding: 1em;
-	margin: 1em;
+    border-radius: 20px;
+    padding: 3em;
+    margin: 1em;
+    /* hacer que ocupe todo el ancho del bloque blanco*/
+    width: 80%;
 }
 
-.formulario input{
-    border-radius: 5px;
-}
-
-.bloqueFormulario{
+.bloqueFormulario {
     display: flex;
     flex-direction: column;
     align-items: start;
+    margin-bottom: 1em;
+    border-bottom-color: black;
+    border-bottom: 1px solid;
+
 }
 
-.bloqueFormulario>div{
+.bloqueFormulario label,
+.bloqueFormulario th {
+    font-family: arial;
+    font-size: 1.2em;
+}
+
+/* Que no este en negrita el titulo de la tabla */
+.bloqueFormulario th {
+    font-weight: normal;
+}
+
+.bloqueFormulario input,
+.bloqueFormulario select {
+    border-radius: 11px;
+    background-color: #D9D9D9;
+    border: none;
+    /* Hacer que todos los input tengan siempre el mismo tamaño*/
+
+    padding: 1em;
+    padding-right: 2em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.bloqueFormulario>div {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-.bloqueFormulario>div>div{
+.bloqueFormulario>div>div {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+}
+.bloqueFormulario p{
+    margin: 0;
+    margin-bottom: 1em;
+}
+#SubPrecio
+{
+    font-size: 0.7em;
+}
+/* <----------------------- Formato de la tabla -----------------------> */
+.TablaHorarios {
+    display: flex;
+    flex-direction: column;
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: 1em;
+    
+}
+.TablaHorarios td {
+    border: 1px black solid;
+    text-align: center;
+    width: 100%;
 }
 
-input[type=submit]{
-    background-color: red;
+
+.TablaHorarios tbody{
+    
+}
+.TablaHorarios button{
+    background-color: #F0F0F0;
+    color: black;
+    border: none;
+    padding: 0.5em;
+    padding-left: 10em;
+    padding-right: 10em;
+    border-radius: 11px;
+    font-size: 0.7em;
+    ;
+}
+
+input[type=submit] {
+    background-color: #FF6453;
     color: white;
+    border: none;
+    padding: 1em;
+    border-radius: 11px;
 }

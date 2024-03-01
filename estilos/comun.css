@@ -11,6 +11,7 @@ p {
 }
 
 /* Estilos para los encabezados generales */
+h1,
 h2,
 h3 {
 	/* fuente de google fonts */
@@ -19,6 +20,7 @@ h3 {
 	font-style: normal;
 }
 
+/* Estilos para los encabezados que vayan con la tipografia de la marca */
 .encabezadoMarca {
 	font-family: "Station No.2 W00 No.2";
 	color: #fbf8f8;
@@ -35,7 +37,7 @@ body {
 	background-color: #fbf8f8;
 }
 
-/* Iframe estandard */
+/* Iframe ""estandard"" */
 iframe {
 	width: 320px;
 	height: 440px;
@@ -47,7 +49,7 @@ iframe {
 	margin: 1em;
 }
 
-/* Bloques naranjas */
+/* <----------------------- Bloques Naranjas -----------------------> */
 .bloqueNaranja {
 	background-color: #ffb46c;
 	padding: 1em;
@@ -55,25 +57,29 @@ iframe {
 	/*Esquinas redondeadas*/
 	border-radius: 20px;
 }
+
 .bloqueNaranja h2,
 .bloqueNaranja p {
 	display: inline;
 }
 
-.bloqueNaranja > div {
+.bloqueNaranja>div {
 	margin: 1em;
 }
+
 /* <----------------------- Bloques blancos -----------------------> */
-.bloqueBlanco{
+.bloqueBlanco {
 	background-color: #FBF8F8;
 	border-radius: 20px;
 	padding: 1em;
 	margin: 1em;
 }
+
 .bloqueBlanco h2,
 .bloqueBlanco h3 {
 	color: #1ca9c3;
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	margin-bottom: 0px;
 }
 
 .bloqueBlanco h2 {
@@ -89,9 +95,10 @@ iframe {
 	font-size: 1.375em;
 	width: 450px;
 	text-align: center;
+	margin-bottom: 0px;
 }
 
-/* <----------------------- Estilos para el encabezado -----------------------> */
+/* <----------------------- Estilos para el Header -----------------------> */
 header {
 	background-color: #3dbbd2;
 	display: flex;
@@ -128,7 +135,7 @@ header nav a {
 	font-size: 3em;
 }
 
-/* <----------------------- Estilos para el pie de pagina -----------------------> */
+/* <----------------------- Estilos para el Footer -----------------------> */
 footer {
 	background-color: #038fa9;
 	color: #fbf8f8;
@@ -146,34 +153,41 @@ footer div {
 	align-items: center;
 }
 
-#informacionF {
-	display: flex;
-	flex-direction: column;
-}
-
 footer a {
 	font-family: Arial;
 	margin: 0.7em;
 	color: #fbf8f8;
 }
 
+/* Barritas del footer */
 .spacerFooter {
 	align-self: center;
 	height: 96px;
 	width: 4px;
 }
+
+/* Direccion y telegono y sus iconos */
+#informacionF {
+	display: flex;
+	flex-direction: column;
+}
+
 #informacionF img {
 	width: 18px;
 	height: 18px;
 }
+
 #informacionF p {
 	margin-top: none;
 	margin-bottom: none;
 }
+
+/* icono RRSS*/
 .iconoFooter img {
 	height: 28px;
 	width: 28px;
 }
+
 /* <----------------------- Estilo del botón flotante -----------------------> */
 .botonSubir {
 	/* Posicion fija */

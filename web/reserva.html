@@ -69,8 +69,12 @@
               </div>
             </div>
             <!-- Campo para la fecha de nacimiento -->
-            <label for="fechaNac">Fecha de Nacimiento</label>
-            <input type="date" name="fechaNac" id="fechaNac" required />
+            <div>
+              <div>
+                <label for="fechaNac">Fecha de Nacimiento</label>
+                <input type="date" name="fechaNac" id="fechaNac" required />
+              </div>
+            </div>
             <div>
               <div><!-- Campo para el correo electrónico -->
                 <label for="email">Correo electrónico*</label>
@@ -85,185 +89,223 @@
           </div>
           <!-- Sección para seleccionar el tipo de espacio a reservar -->
           <h2>¿Qué espacio desea reservar?</h2>
-          <select name="tipoEs" id="tipoEs">
-            <option value="0">Seleccione uno...</option>
-            <option value="1">Sala de Ensayo</option>
-            <option value="2">Estudio de Grabación</option>
-          </select>
-          <!-- Sección para los detalles de la reserva de la Sala de Ensayo -->
-          <div id="SalaEnsayo" class="bloqueFormulario" style="display: none;">
-            <h2>Datos Sala</h2>
-            <!-- Campo para el número de participantes -->
-            <label for="participantesSal">Nº de participantes*</label>
-            <input type="number" name="participantesSal" id="participantesSal" required />
-            <!-- Campo para la fecha de reserva -->
-            <label for="fechaReservaSal">Fecha de reserva*</label>
-            <input type="date" name="fechaReservaSal" id="fechaReservaSal" required />
-            <!-- Campo para seleccionar la sala -->
-            <label for="sala">Sala a reservar*</label>
-            <select name="sala" id="sala">
-              <option value="0">Seleccione una sala...</option>
-              <option value="1">Sala 1</option>
-              <option value="2">Sala 2</option>
-              <option value="3">Sala 3</option>
+          <div class="bloqueFormulario">
+            <select name="tipoEs" id="tipoEs">
+              <option value="0">Seleccione uno...</option>
+              <option value="1">Sala de Ensayo</option>
+              <option value="2">Estudio de Grabación</option>
             </select>
-            <!-- Información sobre el coste de la sala -->
-            <p>Coste de esta sala: Lorem €/h</p>
-            <!-- Tabla para mostrar los tramos horarios disponibles -->
-            <table>
-              <thead>
-                <tr>
-                  <th>Tramo horario*</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Botones para cada tramo horario -->
-                <tr>
-                  <td><button type="button">10:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">11:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">12:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">13:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">14:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">15:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">16:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">17:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">18:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">19:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">20:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">21:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">22:00</button></td>
-                </tr>
-              </tbody>
-            </table>
+          </div>
+          <!-- Sección para los detalles de la reserva de la Sala de Ensayo -->
+          <h2 class="SalaEnsayo" style="display: none;">Datos Sala</h2>
+          <div class="SalaEnsayo bloqueFormulario" style="display: none;">
+            <div>
+              <div>
+                <!-- Campo para el número de participantes -->
+                <label for="participantesSal">Nº de participantes*</label>
+                <input type="number" name="participantesSal" id="participantesSal" required />
+              </div>
+              <div>
+                <!-- Campo para la fecha de reserva -->
+                <label for="fechaReservaSal">Fecha de reserva*</label>
+                <input type="date" name="fechaReservaSal" id="fechaReservaSal" required />
+              </div>
+            </div>
+            <div>
+              <div>
+                <!-- Campo para seleccionar la sala -->
+                <label for="sala">Sala a reservar*</label>
+                <select name="sala" id="sala">
+                  <option value="0">Seleccione una sala...</option>
+                  <option value="1">Sala 1</option>
+                  <option value="2">Sala 2</option>
+                  <option value="3">Sala 3</option>
+                </select>
+                <!-- Información sobre el coste de la sala -->
+                <p id="SubPrecio">Coste de esta sala: Lorem €/h</p>
+              </div>
+              <div>
+                <!-- Tabla para mostrar los tramos horarios disponibles -->
+                <table class="TablaHorarios">
+                  <thead>
+                    <tr>
+                      <th>Tramo horario*</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Botones para cada tramo horario -->
+                    <tr>
+                      <td><button type="button" value="10">10:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="11">11:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="12">12:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="13">13:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="14">14:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="15">15:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="16">16:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="17">17:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="18">18:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="19">19:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="20">20:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="21">21:00</button></td>
+                    </tr>
+                    <tr>
+                      <td><button type="button" value="22">22:00</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
             <!-- Coste total de la reserva -->
             <p>Coste total: Lorem €</p>
             <!-- Sección para los datos artísticos -->
-            <h2>Datos Artísticos</h2>
-            <!-- Campo para el nombre artístico -->
-            <label for="nombreArtistico">Nombre artista/banda</label>
-            <input type="text" name="nombreArtistico" id="nombreArtistico" />
-            <!-- Campo para el género musical -->
-            <label for="genero">Género musical</label>
-            <input type="text" name="genero" id="genero" />
-            <!-- Campo para la cuenta de Instagram -->
-            <label for="instagram">Cuenta de instagram</label>
-            <input type="text" name="instagram" id="instagram" />
-            <!-- Campo para el perfil de Spotify -->
-            <label for="spotify">Perfil de Spotify</label>
-            <input type="text" name="spotify" id="spotify" />
+          </div>
+          <h2 class="SalaEnsayo" style="display: none;">Datos Artísticos</h2>
+          <div class="SalaEnsayo bloqueFormulario" style="display: none;">
+            <div>
+              <div>
+                <!-- Campo para el nombre artístico -->
+                <label for="nombreArtistico">Nombre artista/banda</label>
+                <input type="text" name="nombreArtistico" id="nombreArtistico" />
+              </div>
+              <div>
+                <!-- Campo para el género musical -->
+                <label for="genero">Género musical</label>
+                <input type="text" name="genero" id="genero" />
+              </div>
+            </div>
+            <div>
+              <div>
+                <!-- Campo para la cuenta de Instagram -->
+                <label for="instagram">Cuenta de instagram</label>
+                <input type="text" name="instagram" id="instagram" />
+              </div>
+              <div>
+                <!-- Campo para el perfil de Spotify -->
+                <label for="spotify">Perfil de Spotify</label>
+                <input type="text" name="spotify" id="spotify" />
+              </div>
+            </div>
           </div>
           <!-- Sección para los datos de reserva de Estudio de Grabación -->
-          <div id="Grabacion" class="bloqueFormulario" style="display: none;">
-            <h2>Datos Estudio</h2>
-            <!-- Campo para el número de participantes -->
-            <label for="participantesEs">Nº de participantes*</label>
-            <input type="number" name="participantesEs" id="participantesEs" required />
-            <!-- Campo para la fecha de reserva -->
-            <label for="fechaReservaEs">Fecha de reserva*</label>
-            <input type="date" name="fechaReservaEs" id="fechaReservaEs" required />
-            <!-- Campo para seleccionar el estudio -->
-            <label for="estudio">Estudio a reservar*</label>
-            <select name="estudio" id="estudio">
-              <option value="0">Seleccione una estudio...</option>
-              <option value="1">Estudio 1</option>
-              <option value="2">Estudio 2</option>
-              <option value="3">Estudio 3</option>
-            </select>
-            <!-- Información sobre el coste del estudio -->
-            <p>Coste de este estudio: Lorem €/h</p>
-            <!-- Checkbox para indicar si se necesita técnico de sonido -->
-            <label for="tecnico">¿Necesitas técnico de sonido?</label>
-            <input type="checkbox" name="tecnico" id="tecnico" />
-            <!-- Información sobre el técnico de sonido -->
-            <p>
-              Es obligatorio tener un técnico para usar nuestros estudios.
-              Proporcionaremos uno en caso de que no lleves un propio. Coste del
-              técnico: 20 €/h
+          <h2 class="Grabacion" style="display: none;">Datos Estudio</h2>
+          <div class="bloqueFormulario Grabacion" style="display: none;">
+            <div>
+              <div>
+                <!-- Campo para el número de participantes -->
+                <label for="participantesEs">Nº de participantes*</label>
+                <input type="number" name="participantesEs" id="participantesEs" required />
+              </div>
+              <div>
+                <!-- Campo para la fecha de reserva -->
+                <label for="fechaReservaEs">Fecha de reserva*</label>
+                <input type="date" name="fechaReservaEs" id="fechaReservaEs" required />
+              </div>
+            </div>
+            <div>
+              <div>
+                <!-- Campo para seleccionar el estudio -->
+                <label for="estudio">Estudio a reservar*</label>
+                <select name="estudio" id="estudio">
+                  <option value="0">Seleccione una estudio...</option>
+                  <option value="1">Estudio 1</option>
+                  <option value="2">Estudio 2</option>
+                  <option value="3">Estudio 3</option>
+                </select>
+
+                <!-- Información sobre el coste del estudio -->
+                <p>Coste de este estudio: Lorem €/h</p>
+              </div>
+              <!-- Checkbox para indicar si se necesita técnico de sonido -->
+              <label for="tecnico">¿Necesitas técnico de sonido?</label>
+              <input type="checkbox" name="tecnico" id="tecnico" />
+              <!-- Información sobre el técnico de sonido -->
+              <p>
+                Es obligatorio tener un técnico para usar nuestros estudios.
+                Proporcionaremos uno en caso de que no lleves un propio. Coste del
+                técnico: 20 €/h
+              </p>
+              <!-- Tabla para mostrar los tramos horarios disponibles -->
+              <table class="TablaHorarios">
+                <thead>
+                  <tr>
+                    <th>Tramo horario*</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Botones para cada tramo horario -->
+                  <tr>
+                    <td><button type="button" value="10">10:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="11">11:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="12">12:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="13">13:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="14">14:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="15">15:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="16">16:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="17">17:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="18">18:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="19">19:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="20">20:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="21">21:00</button></td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" value="22">22:00</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Coste total de la reserva -->
+              <p>Coste total: Lorem €</p>
+            </div>
+            <!-- Nota sobre campos obligatorios -->
+            <p id="problemas">
+              *
+              <i>Este campo es obligatorio</i>
             </p>
-            <!-- Tabla para mostrar los tramos horarios disponibles -->
-            <table>
-              <thead>
-                <tr>
-                  <th>Tramo horario*</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Botones para cada tramo horario -->
-                <tr>
-                  <td><button type="button">10:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">11:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">12:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">13:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">14:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">15:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">16:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">17:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">18:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">19:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">20:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">21:00</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button">22:00</button></td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- Coste total de la reserva -->
-            <p>Coste total: Lorem €</p>
-          </div>
-          <!-- Nota sobre campos obligatorios -->
-          <p id="problemas">
-            *
-            <i>Este campo es obligatorio</i>
-          </p>
-          <!-- Botón para enviar el formulario -->
-          <input type="submit" value="Enviar formulario" />
+            <!-- Botón para enviar el formulario -->
+            <input type="submit" value="Enviar formulario" />
         </form>
       </div>
     </div>
@@ -306,25 +348,23 @@
         <img src="../ico/instagram.png" alt="Instagram" width="30" height="30" />
       </a>
 
-        <!-- Enlace a Spotify -->
-        <a
-          class="iconoFooter"
-          href="https://open.spotify.com/playlist/3CbyfgkyTiAAv9qq7VA1E2?si=3bef6c214df94572"
-        >
-          <img src="../ico/spotify.png" alt="Spotify" />
-        </a>
+      <!-- Enlace a Spotify -->
+      <a class="iconoFooter" href="https://open.spotify.com/playlist/3CbyfgkyTiAAv9qq7VA1E2?si=3bef6c214df94572">
+        <img src="../ico/spotify.png" alt="Spotify" />
+      </a>
 
-        <!-- Enlace a Facebook -->
-        <a class="iconoFooter" href="">
-          <img src="../ico/facebook.png" alt="Facebook" />
-        </a>
-      </div>
-      <img class="spacerFooter" src="../ico/SpacerFooter.png" alt="spacer" />
-      <!-- Cuarto bloque con enlace a la sección de créditos -->
-      <div>
-        <!-- Enlace a la sección "Créditos" dentro de la página "Conócenos" -->
-        <a href="conocenos.html#creditos">Créditos</a>
-      </div>
-    </footer>
-  </body>
+      <!-- Enlace a Facebook -->
+      <a class="iconoFooter" href="">
+        <img src="../ico/facebook.png" alt="Facebook" />
+      </a>
+    </div>
+    <img class="spacerFooter" src="../ico/SpacerFooter.png" alt="spacer" />
+    <!-- Cuarto bloque con enlace a la sección de créditos -->
+    <div>
+      <!-- Enlace a la sección "Créditos" dentro de la página "Conócenos" -->
+      <a href="conocenos.html#creditos">Créditos</a>
+    </div>
+  </footer>
+</body>
+
 </html>
