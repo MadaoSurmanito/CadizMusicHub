@@ -48,12 +48,8 @@ document.addEventListener("click", ev => {
 });
 
 //Validacion del formulario
-function validacionFormulario() {
-    //Lo primero, despejar todos los errores anteriores que puedan existir
-    let parrafos = document.getElementById("problemas").getElementsByTagName("p");
-    let tamanno = parrafos.length;
-    for (let i = 0; i < tamanno; i++) parrafos[0].parentNode.removeChild(parrafos[0]);
-
+function validacionFormulario()
+{
     //Si todo va bien se envia true, false en caso contrario
     let bien = true;
 
