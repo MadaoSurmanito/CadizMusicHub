@@ -1,4 +1,22 @@
 /* Documento para estilos del index */
+
+@media (max-width: 48em) {
+	.bloqueBlanco #servicios
+	{
+		flex-direction: column;
+		/* Cambiar a una disposición de columna */
+	}
+
+	.bloqueNaranja #bandas
+	{
+		flex-direction: column;
+		/* Cambiar a una disposición de columna */
+	}
+	.bloqueNaranja{
+		text-align: center;
+	}
+}
+
 /* <----------------------- Cosas generales -----------------------> */
 /* Dividir la pagina en dos bloques,
 un main a la izquierda y los aside a la derecha*/
@@ -91,7 +109,7 @@ main {
 	flex-direction: column;
 	/* Centrar */
 	align-items: center;
-	width: 191px;
+	width: 8em;
 	justify-items: center;
 }
 
@@ -109,19 +127,21 @@ main {
 /* Si el texto es muy largo, que se ajuste al ancho del contenedor */
 .banda h3,
 .banda p {
-	/* Ajustar el texto al ancho del contenedor */
-	width: 191px;
 	/* Centrar */
 	text-align: center;
 }
 
 .banda h3 {
 	font-size: 2.25em;
+	width: 7em;
 	margin-top: 0.5em;
 }
+
 .banda p {
 	margin-bottom: 0px;
+	width: 12em;
 }
+
 .banda img {
 	width: 191px;
 	height: 191px;

@@ -1,4 +1,60 @@
 /* Documento para estilos comunes de la pagina */
+
+/* Cuando el zoom del navegador sea mayor a 100% */
+@media (max-width: 61em) {
+	header {
+		flex-direction: column;
+		/* Cambiar a una disposición de columna */
+	}
+	header a {
+		align-self: center;
+		/* Ocupar todo el ancho disponible */
+	}
+	header nav {
+		flex-direction: column;
+		/* Cambiar a una disposición de columna */
+	}
+	header nav a {
+		align-self: center;
+		font-size: 10px;
+		/* Ocupar todo el ancho disponible */
+	}
+	main {
+		flex-direction: column;
+		/* Cambiar a una disposición de columna */
+	}
+
+	aside {
+		width: 100%;
+		display: flex;
+		/* Ocupar todo el ancho disponible */
+	}
+
+	aside iframe {
+		width: 100%;
+		/* Ocupar todo el ancho disponible */
+	}
+
+}
+
+@media (max-width: 48em) {
+	.bloqueNaranja {
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+		/* columnas*/
+	}
+	footer {
+		flex-direction: column;
+		/* Cambiar a una disposición de columna */
+		align-items: center;
+	}
+	footer .spacerFooter {
+		display: none;
+		/* Ocultar las barritas */
+	}
+}
+
 /* <----------------------- Cosas generales -----------------------> */
 /* Estilo general de los parrafos */
 body,
