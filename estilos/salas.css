@@ -66,9 +66,9 @@ main .bloqueNaranja {
 	margin-top: 0px;
 }
 .bloqueNaranja img {
-    width: 450px;
-    height: 300px;
-    border-radius: 20px;
+	width: 450px;
+	height: 300px;
+	border-radius: 20px;
 }
 table {
 	border-collapse: collapse;
@@ -84,4 +84,40 @@ td {
 thead,
 tbody tr:nth-child(even) {
 	background-color: #b3b3b3;
+}
+
+@media (max-width: 70em) {
+	main .bloqueNaranja {
+		flex-direction: column;
+	}
+	main > div > p {
+		/* Ocupar todo el ancho del contenedor */
+		width: 90%;
+
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+}
+@media (max-width: 77em) {
+	table {
+		display: none;
+	}
+}
+
+@media (max-width: 40em) {
+	.bloqueNaranja > img {
+		width: 100%;
+	}
+	.bloqueNaranja > .bloqueBlancoSobreNaranja {
+		width: 80%;
+	}
+	.bloqueNaranja > .bloqueBlancoSobreNaranja > h2,
+	.bloqueNaranja > .bloqueBlancoSobreNaranja > p {
+		text-align: center;
+		width: 100%;
+	}
+	.bloqueNaranja h2, #enlaces > a {
+		text-align: center;
+		width: 80%;
+	}
 }

@@ -1,22 +1,5 @@
 /* Documento para estilos del index */
 
-@media (max-width: 48em) {
-	.bloqueBlanco #servicios
-	{
-		flex-direction: column;
-		/* Cambiar a una disposición de columna */
-	}
-
-	.bloqueNaranja #bandas
-	{
-		flex-direction: column;
-		/* Cambiar a una disposición de columna */
-	}
-	.bloqueNaranja{
-		text-align: center;
-	}
-}
-
 /* <----------------------- Cosas generales -----------------------> */
 /* Dividir la pagina en dos bloques,
 un main a la izquierda y los aside a la derecha*/
@@ -150,5 +133,55 @@ main {
 	/* Agregar sombra, prototipo: X-Y-Blur-Spread-Color */
 	box-shadow: 0 10px 4px rgba(0, 0, 0, 0.25);
 }
+@media (max-width: 60em) {
+	.bloqueBlanco {
+		margin: 1em;
+		/* Separacion entre los articulos */
+		display: flex;
+		flex-direction: column;
+		/* centrar */
+		align-items: center;
+		/* Separacion entre elementos */
+		text-align: center;
+	}
+	.bloqueBlanco #servicios {
+		flex-direction: column;
+		/* Cambiar a una disposición de columna */
+	}
+	.bloqueBlanco #servicios article {
+		margin: 1em;
+		display: flex;
+		flex-direction: column;
+		/* centrar */
+		align-items: center;
+		/* Separacion entre elementos */
+	}
+	.bloqueBlanco #servicios article p {
+		/*tamaño de los parrafos*/
+		width: 300px;
+		font-size: 1.375em;
+		/* centrar */
+		text-align: center;
+	}
 
-/* <----------------------- Iframes del aside -----------------------> */
+}
+@media (max-width: 50em) {
+	aside {
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+	}
+	aside iframe {
+		width: 80%;
+		align-self: center;
+	}
+	.bloqueNaranja #bandas {
+		flex-direction: column;
+		/* Cambiar a una disposición de columna */
+	}
+	.bloqueNaranja {
+		text-align: center;
+	}
+}

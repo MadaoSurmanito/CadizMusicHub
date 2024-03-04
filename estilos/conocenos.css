@@ -1,4 +1,5 @@
 /* Documento para estilos del conocenos.html */
+
 .bloqueBlanco {
 	margin: 1em;
 	display: flex;
@@ -32,6 +33,7 @@ iframe {
 	align-items: center;
 	justify-content: center;
 }
+
 .bloqueNaranja > div {
 	width: 31.938em;
 }
@@ -70,4 +72,62 @@ iframe {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+}
+
+@media (max-width: 77em) {
+	.bloqueNaranja {
+		flex-direction: column;
+	}
+	.bloqueBlanco {
+		flex-direction: column;
+	}
+	#creditos p {
+		font-size: 1em;
+	}
+}
+@media (max-width: 50em) {
+	.bloqueNaranja > div {
+		/*tamaño de los parrafos*/
+		width: 100%;
+		/* centrar */
+		text-align: center;
+	}
+	.bloqueBlanco {
+		margin: 0em;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.bloqueBlanco > div {
+		/* hacer que el div del bloque blanco ocupe el anchode la pantalla */
+		width: 80%;
+		/* centrar */
+		text-align: center;
+		flex-direction: column;
+	}
+	.bloqueBlanco iframe {
+		width: 80%;
+	}
+	.bloqueBlanco h3 {
+		/*tamaño de los parrafos*/
+		width: 90%;
+		font-size: 2em;
+		/* centrar */
+		text-align: center;
+	}
+	.bloqueBlanco > div > p {
+		/*tamaño de los parrafos*/
+		width: 80%;
+		/* centrar */
+		text-align: center;
+	}
+	iframe {
+		width: 100%;
+	}
+	#creditos > div {
+		margin: 1em;
+	}
+	#creditos > div > p {
+		width: 100%;
+	}
 }

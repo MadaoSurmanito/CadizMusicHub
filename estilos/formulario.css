@@ -30,7 +30,10 @@ h2 {
 	width: 244px;
 	height: 244px;
 }
-
+.bloqueAmarillo > div > h1 {
+	/* centrar el titulo */
+	text-align: center;
+}
 /* <----------------------- Bloque blanco del formulario -----------------------> */
 /* hacer que el bloque blanco ocupe el resto del espacio*/
 .bloqueAmarillo > div {
@@ -150,6 +153,9 @@ h2 {
 	padding-bottom: 1em;
 	font-size: 0.7em;
 }
+.TablaHorarios tbody {
+	margin-bottom: 1em;
+}
 .TablaHorarios button:hover {
 	background-color: green;
 	color: #f0f0f0;
@@ -165,4 +171,28 @@ input[type="submit"] {
 	border: none;
 	padding: 1em;
 	border-radius: 11px;
+}
+@media (max-width: 70em) {
+	.bloqueAmarillo > img {
+		/* ocultar la imagen */
+		display: none;	
+	}
+
+	.bloqueFormulario > div
+	{
+		flex-direction: column;
+	}
+	.bloqueAmarillo > div > h1 {
+		/* centrar el titulo */
+		font-size: 2em;
+	}
+	#formulario {
+		width: 60%;
+	}
+	.TablaHorarios button {
+		padding-left: 7em;
+		padding-right: 7em;
+
+	}
+
 }
