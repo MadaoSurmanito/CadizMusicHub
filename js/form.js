@@ -43,8 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Botones para las horas
 document.addEventListener("click", ev => {
-    if (ev.target.matches(".SalaEnsayo td>button")) HoraASala(ev.target.value);
-    if (ev.target.matches(".Grabacion td>button")) HoraAEstudio(ev.target.value);
+    if (ev.target.matches(".SalaEnsayo td>button")) HoraASala(ev.target);
+    if (ev.target.matches(".Grabacion td>button")) HoraAEstudio(ev.target);
+});
+
+//Actualizaciones de los precios en los textos del formulario
+document.addEventListener("change", ev => {
+    if(ev.target.matches("#sala")) PrecioSala(ev.target.value);
 });
 
 //Validacion del formulario
@@ -56,110 +61,128 @@ function validacionFormulario()
     //Los datos de la persona, que son comunes
     let nombre = document.getElementById("nombre");
     let apellidos = document.getElementById("apellidos");
-    let fechaNac = document.getElementById("fechaNac").value;
+    let fechaNac = document.getElementById("fechaNac");
     let email = document.getElementById("email");
     let telefono = document.getElementById("telefono");
-    let eleccionSala = document.getElementById("tipoEs").value;
+    let eleccionSala = document.getElementById("tipoEs");
+
+    //Eliminar todos los fallos que se generan ya que se pudo reenviar el formulario en verdad
+    let errores = document.querySelectorAll("#problemas>p");
+    let nErrores = errores.length;
+    let inputs = document.querySelectorAll("form input");
+    for(let i = 0; i < nErrores; i++) errores[i].parentNode.removeChild(errores[i]);
+    for(let i = 0; i < inputs.length-1; i++) inputs[i].style.backgroundColor = "#d9d9d9";
 
     //Validacion del nombre
-    if (!(/^[a-zA-Z]+$/.test(nombre))) {
+    if (!(/^[a-zA-Z]+$/.test(nombre.value))) {
         bien = false;
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("El campo nombre es erroneo"));
         document.getElementById("problemas").appendChild(error);
+        nombre.style.backgroundColor = "#fa7268";
     }
 
     //Validacion de los apellidos
-    if (!(/[a-zA-z]+( [a-zA-z]+)*/.test(apellidos))) {
+    if (!(/^[a-zA-z]+( [a-zA-z]+)*$/.test(apellidos.value))) {
         bien = false;
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("El campo apellidos es erroneo"));
         document.getElementById("problemas").appendChild(error);
+        apellidos.style.backgroundColor = "#fa7268";
     }
 
     //Validacion de la fecha de nacimiento
     let fechaDeHoy = new Date();
-    let fechaDada = new Date(fechaNac);
-    if (fechaNac == "" || fechaDada.toString() == 'Invalid Date' || fechaDada.getFullYear() < fechaDeHoy.getFullYear() - 18) {
+    let fechaDada = new Date(fechaNac.value);
+    if (fechaNac.value == "" || fechaDada.toString() == 'Invalid Date' || fechaDada.getFullYear() > fechaDeHoy.getFullYear() - 18) {
         bien = false;
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("El campo fecha de nacimiento es erroneo"));
         document.getElementById("problemas").appendChild(error);
+        fechaNac.style.backgroundColor = "#fa7268";
     }
 
     //Validacion del email
-    if (!(/^[a-zA-Z0-9]+@[a-z]+\.[a-z]+$/.test(email))) {
+    if (!(/[a-zA-Z0-9]+@[a-z]+\.[a-z]+/.test(email.value))) {
         bien = false;
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("El campo email es erroneo"));
         document.getElementById("problemas").appendChild(error);
+        email.style.backgroundColor = "#fa7268";
     }
 
     //Validacion del telefono
-    if (!(/^[0-9]{9}$/.test(telefono))) {
+    if (!(/^[0-9]{9}$/.test(telefono.value))) {
         bien = false;
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("El campo telefono es erroneo"));
         document.getElementById("problemas").appendChild(error);
+        telefono.style.backgroundColor = "#fa7268";
     }
 
     //Eleccion de sala, que tiene que estar seleccionado si o si nos guste o no
-    if (eleccionSala != 1 || eleccionSala != 2) {
+    if (eleccionSala.value < 1 || eleccionSala.value > 2) {
         bien = false;
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("Debes seleccionar un tipo de sala"));
         document.getElementById("problemas").appendChild(error);
+        eleccionSala.style.backgroundColor = "#fa7268";
     }
     else {
         //Sala de ensayo
-        if (eleccionSala == 1) {
+        if (eleccionSala.value == 1) {
             //Sala en si
             let participantes = document.getElementById("participantesSal");
-            let fechaReserva = document.getElementById("fechaReservaSal").value;
-            let salaReservada = document.getElementById("sala").value;
+            let fechaReserva = document.getElementById("fechaReservaSal");
+            let salaReservada = document.getElementById("sala");
 
-            if (salaReservada < 0 || salaReservada > 3) {
+            if (salaReservada.value < 0 || salaReservada.value > 3) {
                 bien = false;
                 let error = document.createElement("p");
                 error.appendChild(document.createTextNode("Debes seleccionar la sala que quieres reservar"));
                 document.getElementById("problemas").appendChild(error);
+                salaReservada.style.backgroundColor = "#fa7268";
             }
             else {
                 //Como no tenemos base de datos, estas cosas van fijas ahora mismo. Cuando tengamos una esto hay que tocarlo para que sea dinamica con el servidor
-                if (salaReservada == 1) {
-                    if (participantes > 10 || participantes < 1) {
+                if (salaReservada.value == 1) {
+                    if (participantes.value > 10 || participantes.value < 1) {
                         bien = false;
                         let error = document.createElement("p");
                         error.appendChild(document.createTextNode("Aforo incorrecto para esta sala"));
                         document.getElementById("problemas").appendChild(error);
+                        participantes.style.backgroundColor = "#fa7268";
                     }
                 }
                 else {
-                    if (salaReservada == 2) {
-                        if (participantes > 8 || participantes < 1) {
+                    if (salaReservada.value == 2) {
+                        if (participantes.value > 8 || participantes.value < 1) {
                             bien = false;
                             let error = document.createElement("p");
                             error.appendChild(document.createTextNode("Aforo incorrecto para esta sala"));
                             document.getElementById("problemas").appendChild(error);
+                            participantes.style.backgroundColor = "#fa7268";
                         }
                     }
                     else {
-                        if (participantes > 15 || participantes < 1) {
+                        if (participantes.value > 15 || participantes.value < 1) {
                             bien = false;
                             let error = document.createElement("p");
                             error.appendChild(document.createTextNode("Aforo incorrecto para esta sala"));
                             document.getElementById("problemas").appendChild(error);
+                            participantes.style.backgroundColor = "#fa7268";
                         }
                     }
                 }
             }
 
-            let fechaR = new Date(fechaReserva);
-            if (fechaReserva == "" || fechaR.toString() == 'Invalid Date' || fechaR < fechaDeHoy) {
+            let fechaR = new Date(fechaReserva.value);
+            if (fechaReserva.value == "" || fechaR.toString() == 'Invalid Date' || fechaR < fechaDeHoy) {
                 bien = false;
                 let error = document.createElement("p");
                 error.appendChild(document.createTextNode("Fecha de reserva incorrecta"));
                 document.getElementById("problemas").appendChild(error);
+                fechaReserva.style.backgroundColor = "#fa7268";
             }
 
             if (horasSala.length > 3 || horasSala.length < 1) {
@@ -188,18 +211,25 @@ function validacionFormulario()
 }
 
 //Funcion que añade o borra la hora a la sala, controlando el maximo y tal
-function HoraASala(hora) {
-    if (horasSala.find(hora) == undefined) {
+function HoraASala(elementoHora) {
+    let hora = parseInt(elementoHora.value);
+    if (horasSala.indexOf(hora) == undefined || horasSala.indexOf(hora) == -1) {
         horasSala.push(hora);
+        elementoHora.style.backgroundColor = "green";
+        elementoHora.style.color = "#f0f0f0";
     }
     else {
         horasSala.splice(horasSala.indexOf(hora), 1);
+        elementoHora.style.backgroundColor = "#f0f0f0";
+        elementoHora.style.color = "black";
     }
+
+    PrecioTotalSala(); //Actualizar el precio total de las salas
 }
 
 //Funcion que añade o borra la hora al estudio, controlando el maximo y tal
 function HoraAEstudio(hora) {
-    if (horasEstudio.find(hora) == undefined) {
+    if (horasEstudio.indexOf(hora) == undefined || horasSala.indexOf(hora) == -1) {
         horasEstudio.push(hora);
     }
     else {
@@ -211,5 +241,28 @@ function HoraAEstudio(hora) {
 //Comprobacion para las horas
 function Consecutivos(valor, indice, array) {
     if (indice == 0) return true;
-    else return (valor == array[indice - 1]);
+    else return (parseInt(valor) == parseInt(array[indice - 1]) + 1);
+}
+
+//Funcion de los precios de las salas
+function PrecioSala(sala)
+{
+    if(sala == 0) document.getElementById("CosteSala").innerHTML = "Coste de esta sala: 0 €/h";
+    if(sala == 1) document.getElementById("CosteSala").innerHTML = "Coste de esta sala: 3 €/h";
+    if(sala == 2) document.getElementById("CosteSala").innerHTML = "Coste de esta sala: 12 €/h";
+    if(sala == 3) document.getElementById("CosteSala").innerHTML = "Coste de esta sala: 3 €/h";
+    
+    PrecioTotalSala();
+}
+
+function PrecioTotalSala()
+{
+    let sala = document.getElementById("sala").value;
+    if(horasSala.length == 0 || sala == 0) document.getElementById("CosteTotalSala").innerHTML = "Coste total: 0 €";
+    else
+    {
+        if(sala == 1) document.getElementById("CosteTotalSala").innerHTML = "Coste total: "+horasSala.length*3+" €";
+        if(sala == 2) document.getElementById("CosteTotalSala").innerHTML = "Coste total: "+horasSala.length*12+" €";
+        if(sala == 3) document.getElementById("CosteTotalSala").innerHTML = "Coste total: "+horasSala.length*3+" €";
+    }
 }
