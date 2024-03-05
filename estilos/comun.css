@@ -27,6 +27,10 @@ html {
 p {
 	font-family: Arial;
 }
+main{
+	
+	padding-top: 8.75em;
+}
 /* Al utilizar Boostrap se aplicaba un estilo que hacia que las imagenes */
 /* descolocasen el header y el footer */
 /* Esto lo soluciona */
@@ -126,8 +130,13 @@ iframe {
 header {
 	background-color: #3dbbd2;
 	display: flex;
-	/* hacer que no queden margenes */
-	margin: 0;
+    /* hacer que no queden margenes */
+    margin: 0;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.3s; /* Agregar una transición suave */
 }
 
 header a img {
@@ -215,18 +224,27 @@ footer a {
 }
 
 /* <----------------------- Estilo del botón flotante -----------------------> */
-.botonSubir {
-	/* Posicion fija */
+#botonSubir {
 	position: fixed;
 	/* Posicion en la esquina inferior derecha */
 	bottom: 50px;
 	right: 50px;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s, transform 0.3s; /* Transiciones suaves */
 }
 
+#botonSubir.mostrar {
+    /* Estilos cuando se muestra */
+    opacity: 1;
+    transform: scale(1.1); /* Agrandar un poco */
+}
 @media (max-width: 77em) {
-
+	main{
+		padding-top: 0px;
+	}
 	header {
 		flex-direction: column;
+		position: static;
 		/* Cambiar a una disposición de columna */
 	}
 	header a {
