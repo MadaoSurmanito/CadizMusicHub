@@ -3,7 +3,6 @@
 /* Cuando el zoom del navegador sea mayor a 125% de px en google chrome en una pantalla 1080*/
 /* se activara el siguiente estilo */
 @media (max-width: 77em) {
-
 	main {
 		flex-direction: column;
 		/* Cambiar a una disposición de columna */
@@ -27,8 +26,7 @@ html {
 p {
 	font-family: Arial;
 }
-main{
-	
+main {
 	padding-top: 8.75em;
 }
 /* Al utilizar Boostrap se aplicaba un estilo que hacia que las imagenes */
@@ -130,13 +128,13 @@ iframe {
 header {
 	background-color: #3dbbd2;
 	display: flex;
-    /* hacer que no queden margenes */
-    margin: 0;
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    transition: top 0.3s; /* Agregar una transición suave */
+	/* hacer que no queden margenes */
+	margin: 0;
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	transition: top 0.3s; /* Agregar una transición suave */
 }
 
 header a img {
@@ -205,6 +203,7 @@ footer a {
 #informacionF {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 }
 
 #informacionF img {
@@ -213,8 +212,8 @@ footer a {
 }
 
 #informacionF p {
-	margin-top: none;
-	margin-bottom: none;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 /* icono RRSS*/
@@ -229,17 +228,17 @@ footer a {
 	/* Posicion en la esquina inferior derecha */
 	bottom: 50px;
 	right: 50px;
-    opacity: 0; /* Inicialmente oculto */
-    transition: opacity 0.3s, transform 0.3s; /* Transiciones suaves */
+	opacity: 0; /* Inicialmente oculto */
+	transition: opacity 0.3s, transform 0.3s; /* Transiciones suaves */
 }
 
 #botonSubir.mostrar {
-    /* Estilos cuando se muestra */
-    opacity: 1;
-    transform: scale(1.1); /* Agrandar un poco */
+	/* Estilos cuando se muestra */
+	opacity: 1;
+	transform: scale(1.1); /* Agrandar un poco */
 }
 @media (max-width: 77em) {
-	main{
+	main {
 		padding-top: 0px;
 	}
 	header {

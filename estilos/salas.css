@@ -28,7 +28,7 @@ main > div + div {
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
-	justify-content: ce-ce;
+	justify-content: center;
 	margin-bottom: 1em;
 }
 
