@@ -188,7 +188,7 @@ function validacionFormulario()
             if (horasSala.length > 3 || horasSala.length < 1) {
                 bien = false;
                 let error = document.createElement("p");
-                error.appendChild(document.createTextNode("No puedes seleccionar mas de 3 horas"));
+                error.appendChild(document.createTextNode("Debes seleccionar al menos 1 hora"));
                 document.getElementById("problemas").appendChild(error);
             }
             else {
@@ -196,7 +196,7 @@ function validacionFormulario()
                 if (!horasSala.every(Consecutivos)) {
                     bien = false;
                     let error = document.createElement("p");
-                    error.appendChild(document.createTextNode("Seleccione el tramo horario de forma correcta"));
+                    error.appendChild(document.createTextNode("El tramo horario debe ser consecutivo"));
                     document.getElementById("problemas").appendChild(error);
                 }
             }
@@ -214,9 +214,20 @@ function validacionFormulario()
 function HoraASala(elementoHora) {
     let hora = parseInt(elementoHora.value);
     if (horasSala.indexOf(hora) == undefined || horasSala.indexOf(hora) == -1) {
-        horasSala.push(hora);
-        elementoHora.style.backgroundColor = "green";
-        elementoHora.style.color = "#f0f0f0";
+        if(horasSala.length < 3)
+        {
+            horasSala.push(hora);
+            horasSala.sort();
+            if(horasSala.every(Consecutivos))
+            {
+                elementoHora.style.backgroundColor = "green";
+                elementoHora.style.color = "#f0f0f0"; 
+            }
+            else
+            {
+                horasSala.splice(horasSala.indexOf(hora), 1);
+            }
+        }
     }
     else {
         horasSala.splice(horasSala.indexOf(hora), 1);
