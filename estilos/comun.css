@@ -26,9 +26,6 @@ html {
 p {
 	font-family: Arial;
 }
-main {
-	padding-top: 8.75em;
-}
 /* Al utilizar Boostrap se aplicaba un estilo que hacia que las imagenes */
 /* descolocasen el header y el footer */
 /* Esto lo soluciona */
@@ -131,7 +128,6 @@ header {
 	/* hacer que no queden margenes */
 	margin: 0;
 	z-index: 1000;
-	position: fixed;
 	top: 0;
 	width: 100%;
 	transition: top 0.3s; /* Agregar una transición suave */
