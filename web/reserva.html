@@ -288,7 +288,7 @@
                   </select>
 
                   <!-- Información sobre el coste del estudio -->
-                  <p class="SubPrecio">Coste de este estudio: Lorem €/h</p>
+                  <p id="CosteEstudio" class="SubPrecio">Coste de este estudio: Lorem €/h</p>
                   <div>
                     <!-- Checkbox para indicar si se necesita técnico de sonido -->
                     <label for="tecnico">¿Necesitas técnico de sonido?</label>
@@ -353,7 +353,7 @@
                 </table>
                 <!-- Coste total de la reserva -->
               </div>
-              <p id="">Coste total: Lorem €</p>
+              <p id="CosteTotalEstudio">Coste total: 0 €</p>
             </div>
 
             <!-- Nota sobre campos obligatorios -->
@@ -362,6 +362,7 @@
               <i>Este campo es obligatorio</i>
             </p>
             <!-- Botón para enviar el formulario -->
+            <input type="hidden" name="precioTotal" id="precioTotal" value="0">
             <input type="submit" value="Enviar formulario" />
           </form>
         </div>

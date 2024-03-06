@@ -51,6 +51,12 @@ document.addEventListener("click", ev => {
 document.addEventListener("change", ev => {
     if(ev.target.matches("#sala")) PrecioSala(ev.target.value);
 });
+document.addEventListener("change", ev => {
+    if(ev.target.matches("#estudio")) PrecioEstudio(ev.target.value);
+});
+document.addEventListener("change", ev => {
+    if(ev.target.matches("#tecnico")) PrecioTotalEstudio(ev.target.value);
+});
 
 //Validacion del formulario
 function validacionFormulario()
@@ -177,6 +183,7 @@ function validacionFormulario()
             }
 
             let fechaR = new Date(fechaReserva.value);
+            if(fechaR.getDay() == fechaDeHoy.getDay() && fechaR.getMonth() == fechaDeHoy.getMonth() && fechaR.getFullYear() == fechaDeHoy.getFullYear()) fechaR = fechaDeHoy;
             if (fechaReserva.value == "" || fechaR.toString() == 'Invalid Date' || fechaR < fechaDeHoy) {
                 bien = false;
                 let error = document.createElement("p");
@@ -199,14 +206,105 @@ function validacionFormulario()
                     error.appendChild(document.createTextNode("El tramo horario debe ser consecutivo"));
                     document.getElementById("problemas").appendChild(error);
                 }
+
+                if(horasSala[0] <= fechaR.getHours())
+                {
+                    bien = false;
+                    let error = document.createElement("p");
+                    error.appendChild(document.createTextNode("Tienes que reservar un tramo posible"));
+                    document.getElementById("problemas").appendChild(error);
+                }
             }
+
+            //Por si acaso, vamos a asegurarnos de que el precio total no lo modificaron antes de tiempo o algo
+            PrecioTotalSala();
         }
         //Estudio de grabación
         else {
+            //Propios de los estudios de grabacion
+            let participantes = document.getElementById("participantesEs");
+            let fechaReserva = document.getElementById("fechaReservaEs");
+            let salaReservada = document.getElementById("estudio");
 
+            if (salaReservada.value < 0 || salaReservada.value > 3) {
+                bien = false;
+                let error = document.createElement("p");
+                error.appendChild(document.createTextNode("Debes seleccionar el estudio que quieres reservar"));
+                document.getElementById("problemas").appendChild(error);
+                salaReservada.style.backgroundColor = "#fa7268";
+            }
+            else {
+                //Como no tenemos base de datos, estas cosas van fijas ahora mismo. Cuando tengamos una esto hay que tocarlo para que sea dinamica con el servidor
+                if (salaReservada.value == 1) {
+                    if (participantes.value > 5 || participantes.value < 1) {
+                        bien = false;
+                        let error = document.createElement("p");
+                        error.appendChild(document.createTextNode("Aforo incorrecto para este estudio"));
+                        document.getElementById("problemas").appendChild(error);
+                        participantes.style.backgroundColor = "#fa7268";
+                    }
+                }
+                else {
+                    if (salaReservada.value == 2) {
+                        if (participantes.value > 10 || participantes.value < 1) {
+                            bien = false;
+                            let error = document.createElement("p");
+                            error.appendChild(document.createTextNode("Aforo incorrecto para este estudio"));
+                            document.getElementById("problemas").appendChild(error);
+                            participantes.style.backgroundColor = "#fa7268";
+                        }
+                    }
+                    else {
+                        if (participantes.value > 2 || participantes.value < 1) {
+                            bien = false;
+                            let error = document.createElement("p");
+                            error.appendChild(document.createTextNode("Aforo incorrecto para este estudio"));
+                            document.getElementById("problemas").appendChild(error);
+                            participantes.style.backgroundColor = "#fa7268";
+                        }
+                    }
+                }
+            }
+
+            let fechaR = new Date(fechaReserva.value);
+            if(fechaR.getDay() == fechaDeHoy.getDay() && fechaR.getMonth() == fechaDeHoy.getMonth() && fechaR.getFullYear() == fechaDeHoy.getFullYear()) fechaR = fechaDeHoy;
+            if (fechaReserva.value == "" || fechaR.toString() == 'Invalid Date' || fechaR < fechaDeHoy) {
+                bien = false;
+                let error = document.createElement("p");
+                error.appendChild(document.createTextNode("Fecha de reserva incorrecta"));
+                document.getElementById("problemas").appendChild(error);
+                fechaReserva.style.backgroundColor = "#fa7268";
+            }
+
+            if (horasSala.length > 3 || horasSala.length < 1) {
+                bien = false;
+                let error = document.createElement("p");
+                error.appendChild(document.createTextNode("Debes seleccionar al menos 1 hora"));
+                document.getElementById("problemas").appendChild(error);
+            }
+            else {
+                horasSala.sort();
+                if (!horasSala.every(Consecutivos)) {
+                    bien = false;
+                    let error = document.createElement("p");
+                    error.appendChild(document.createTextNode("El tramo horario debe ser consecutivo"));
+                    document.getElementById("problemas").appendChild(error);
+                }
+
+                if(horasEstudio[0] <= fechaR.getHours())
+                {
+                    bien = false;
+                    let error = document.createElement("p");
+                    error.appendChild(document.createTextNode("Tienes que reservar un tramo posible"));
+                    document.getElementById("problemas").appendChild(error);
+                }
+            }
+
+            //Por si acaso, vamos a asegurarnos de que el precio total no lo modificaron antes de tiempo o algo
+            PrecioTotalEstudio();
         }
     }
-
+    console.log(document.getElementById("precioTotal").value);
     return bien;
 }
 
@@ -231,21 +329,37 @@ function HoraASala(elementoHora) {
     }
     else {
         horasSala.splice(horasSala.indexOf(hora), 1);
-        elementoHora.style.backgroundColor = "#f0f0f0";
-        elementoHora.style.color = "black";
+        elementoHora.removeAttribute("style");
     }
 
     PrecioTotalSala(); //Actualizar el precio total de las salas
 }
 
 //Funcion que añade o borra la hora al estudio, controlando el maximo y tal
-function HoraAEstudio(hora) {
-    if (horasEstudio.indexOf(hora) == undefined || horasSala.indexOf(hora) == -1) {
-        horasEstudio.push(hora);
+function HoraAEstudio(elementoHora) {
+    let hora = parseInt(elementoHora.value);
+    if (horasEstudio.indexOf(hora) == undefined || horasEstudio.indexOf(hora) == -1) {
+        if(horasEstudio.length < 3)
+        {
+            horasEstudio.push(hora);
+            horasEstudio.sort();
+            if(horasEstudio.every(Consecutivos))
+            {
+                elementoHora.style.backgroundColor = "green";
+                elementoHora.style.color = "#f0f0f0"; 
+            }
+            else
+            {
+                horasEstudio.splice(horasEstudio.indexOf(hora), 1);
+            }
+        }
     }
     else {
         horasEstudio.splice(horasEstudio.indexOf(hora), 1);
+        elementoHora.removeAttribute("style");
     }
+
+    PrecioTotalEstudio(); //Actualizar el precio total para el estudio
 }
 
 
@@ -269,11 +383,44 @@ function PrecioSala(sala)
 function PrecioTotalSala()
 {
     let sala = document.getElementById("sala").value;
-    if(horasSala.length == 0 || sala == 0) document.getElementById("CosteTotalSala").innerHTML = "Coste total: 0 €";
+    let precioTotal = 0;
+    if(horasSala.length == 0 || sala == 0) precioTotal = 0;
     else
     {
-        if(sala == 1) document.getElementById("CosteTotalSala").innerHTML = "Coste total: "+horasSala.length*3+" €";
-        if(sala == 2) document.getElementById("CosteTotalSala").innerHTML = "Coste total: "+horasSala.length*12+" €";
-        if(sala == 3) document.getElementById("CosteTotalSala").innerHTML = "Coste total: "+horasSala.length*3+" €";
+        if(sala == 1) precioTotal = horasSala.length*3;
+        if(sala == 2) precioTotal = horasSala.length*12;
+        if(sala == 3) precioTotal = horasSala.length*3;
     }
+
+    document.getElementById("CosteTotalSala").innerHTML = "Coste total: "+precioTotal+" €";
+    document.getElementById("precioTotal").value = precioTotal;
+}
+
+//Funcion de los precios de los estudios
+function PrecioEstudio(estudio)
+{
+    if(estudio == 0) document.getElementById("CosteEstudio").innerHTML = "Coste de esta sala: 0 €/h";
+    if(estudio == 1) document.getElementById("CosteEstudio").innerHTML = "Coste de esta sala: 15 €/h";
+    if(estudio == 2) document.getElementById("CosteEstudio").innerHTML = "Coste de esta sala: 20 €/h";
+    if(estudio == 3) document.getElementById("CosteEstudio").innerHTML = "Coste de esta sala: 10 €/h";
+    
+    PrecioTotalEstudio();
+}
+
+function PrecioTotalEstudio()
+{
+    let estudio = document.getElementById("estudio").value;
+    let asesor = document.getElementById("tecnico");
+    let precioTotal = 0;
+    if(horasEstudio.length == 0 || estudio == 0) precioTotal = 0;
+    else
+    {
+        if(estudio == 1) precioTotal = horasEstudio.length*10;
+        if(estudio == 2) precioTotal = horasEstudio.length*20;
+        if(estudio == 3) precioTotal = horasEstudio.length*15;
+    }
+    if(asesor.checked == true) precioTotal+=20;
+
+    document.getElementById("CosteTotalEstudio").innerHTML = "Coste total: "+precioTotal+" €";
+    document.getElementById("precioTotal").value = precioTotal;
 }
