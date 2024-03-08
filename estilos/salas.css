@@ -104,7 +104,8 @@ thead {
 	display: none;
 }
 @media (max-width: 70em) {
-	main .bloqueNaranja {
+
+	main .bloqueNaranja, #enlaces {
 		flex-direction: column;
 	}
 	main > div > p {
