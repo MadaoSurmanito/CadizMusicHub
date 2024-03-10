@@ -8,19 +8,15 @@
 }
 
 #enlaces > a {
-	color: #1ca9c3;
+	color: #127587;
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	font-family: "Alegreya Sans SC", sans-serif;
 	font-style: normal;
 	font-size: 2em;
 }
 
-#enlaces > a:hover {
-	color: #038fa9;
-}
-
 #enlaces > .bloqueNaranja {
-	background-color: #ffcc9c;
+	background-color: #ffb46c;
 	margin: 1em;
 }
 
@@ -58,7 +54,7 @@ main .bloqueNaranja {
 	width: 20em;
 }
 .bloqueNaranja h2 {
-	color: #1ca9c3;
+	color: #037c91;
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	margin-bottom: 0px;
 	font-size: 3em;
@@ -97,7 +93,7 @@ tbody {
 	text-align: center;
 }
 thead {
-	background-color: #3dbbd2;
+	background-color: #037c91;
 	color: #fbf8f8;
 }
 .tablaPequenia {
