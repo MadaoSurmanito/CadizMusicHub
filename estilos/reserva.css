@@ -172,6 +172,7 @@ input[type="submit"] {
 	padding: 1em;
 	border-radius: 11px;
 }
+/* <----------------------- Media Query -----------------------> */
 @media (max-width: 70em) {
 	.bloqueAmarillo > img {
 		/* ocultar la imagen */
