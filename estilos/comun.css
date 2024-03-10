@@ -46,7 +46,7 @@ h3 {
 /* Estilos para los encabezados que vayan con la tipografia de la marca */
 .encabezadoMarca {
 	font-family: "Station No.2 W00 No.2";
-	color: #fbf8f8;
+	color: #000000;
 	font-size: 3em;
 }
 
@@ -100,7 +100,7 @@ iframe {
 
 .bloqueBlanco h2,
 .bloqueBlanco h3 {
-	color: #1ca9c3;
+	color: #037c91;
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	margin-bottom: 0px;
 }
@@ -167,7 +167,7 @@ header nav a:hover {
 
 /* <----------------------- Estilos para el Footer -----------------------> */
 footer {
-	background-color: #038fa9;
+	background-color: #025e6e;
 	color: #fbf8f8;
 	/* Hacer que ocupe todo el espacio restante */
 	display: flex;
