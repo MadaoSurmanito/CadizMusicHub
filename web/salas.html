@@ -56,7 +56,6 @@
         <a href="salas.html">Espacios</a>
         <!-- Enlace a la página "Conócenos" -->
         <a href="conocenos.html">Conócenos</a>
-        <button id="modo oscuro" onclick="cambiarModo()">Modo oscuro</button>
       </nav>
     </header>
     <main id="main">
@@ -95,22 +94,20 @@
           <img src="../img/Slider3.jpg" alt="Sala de Ensayo" />
         </article>
         <!-- Tabla de datos para Salas de Ensayo -->
-        <table>
+        <table class="tablaGrande">
           <!-- Cabecera de la tabla -->
           <thead>
             <tr>
               <th>Sala</th>
               <th>Ubicación</th>
               <th>Instalaciones</th>
-              <th>Capacidad</th>
               <th>Mesa de mezclas</th>
-              <th>Canales</th>
               <th>Amplificador Bajo</th>
               <th>Amplificador Guitarra 1</th>
-              <th>Amplificador Guitarra 2</th>
               <th>Micrófonos</th>
               <th>¿Insonorizada?</th>
-              <th>Coste tramo</th>
+              <th>Capacidad</th>
+              <th>Coste (€/h)</th>
             </tr>
           </thead>
           <!-- Cuerpo de la tabla -->
@@ -120,42 +117,133 @@
               <td>Sala 1</td>
               <td>Cádiz</td>
               <td>La Báskula</td>
-              <td>10</td>
               <td>mackie profx12</td>
-              <td>12</td>
               <td>Hartke A70</td>
-              <td>Fender Champion 100</td>
-              <td>Fender Champion 100</td>
+              <td>Fender Champion 100 x2</td>
               <td>Sennheiser E845 x2</td>
-              <td>✔</td>
+              <td>✅</td>
+              <td>10</td>
               <td>3€</td>
             </tr>
             <tr>
               <td>Sala 2</td>
               <td>San Fernando</td>
               <td>Isla Música</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>✅</td>
               <td>8</td>
-              <td>❌</td>
-              <td>❌</td>
-              <td>❌</td>
-              <td>❌</td>
-              <td>❌</td>
-              <td>❌</td>
-              <td>✔</td>
               <td>12€</td>
             </tr>
             <tr>
               <td>Sala 3</td>
               <td>El Portal, Jerez</td>
               <td>musicaWorkshop</td>
-              <td>15</td>
               <td>mackie profx12</td>
-              <td>12</td>
               <td>Hartke A70</td>
-              <td>Fender Champion 100</td>
-              <td>Fender Champion 100</td>
+              <td>Mesa Boogie x2</td>
               <td>Sennheiser E845 x2</td>
-              <td>✔</td>
+              <td>✅</td>
+              <td>15</td>
+              <td>3€</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="tablaPequenia">
+          <!-- Cabecera de la tabla -->
+          <thead>
+            <tr>
+              <th>Sala</th>
+              <th>Ubicación</th>
+              <th>Instalaciones</th>
+              <th>Mesa de mezclas</th>
+              <th>Amplificador Bajo</th>
+              <th>Amplificador Guitarra 1</th>
+              <th>Micrófonos</th>
+              <th>¿Insonorizada?</th>
+              <th>Capacidad</th>
+              <th>Coste (€/h)</th>
+            </tr>
+          </thead>
+          <!-- Cuerpo de la tabla -->
+          <tbody>
+            <!-- Filas con datos de ejemplo -->
+            <tr>
+              <td>Sala 1</td>
+              <td>Cádiz</td>
+              <td>La Báskula</td>
+              <td>mackie profx12</td>
+              <td>Hartke A70</td>
+              <td>Fender Champion 100 x2</td>
+              <td>Sennheiser E845 x2</td>
+              <td>Sí</td>
+              <td>10</td>
+              <td>3€</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="tablaPequenia">
+          <!-- Cabecera de la tabla -->
+          <thead>
+            <tr>
+              <th>Sala</th>
+              <th>Ubicación</th>
+              <th>Instalaciones</th>
+              <th>Mesa de mezclas</th>
+              <th>Amplificador Bajo</th>
+              <th>Amplificador Guitarra 1</th>
+              <th>Micrófonos</th>
+              <th>¿Insonorizada?</th>
+              <th>Capacidad</th>
+              <th>Coste (€/h)</th>
+            </tr>
+          </thead>
+          <!-- Cuerpo de la tabla -->
+          <tbody>
+            <tr>
+              <td>Sala 2</td>
+              <td>San Fernando</td>
+              <td>Isla Música</td>
+              <td>No</td>
+              <td>No</td>
+              <td>No</td>
+              <td>No</td>
+              <td>Sí</td>
+              <td>8</td>
+              <td>12€</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="tablaPequenia">
+          <!-- Cabecera de la tabla -->
+          <thead>
+            <tr>
+              <th>Sala</th>
+              <th>Ubicación</th>
+              <th>Instalaciones</th>
+              <th>Mesa de mezclas</th>
+              <th>Amplificador Bajo</th>
+              <th>Amplificador Guitarra 1</th>
+              <th>Micrófonos</th>
+              <th>¿Insonorizada?</th>
+              <th>Capacidad</th>
+              <th>Coste (€/h)</th>
+            </tr>
+          </thead>
+          <!-- Cuerpo de la tabla -->
+          <tbody>
+            <tr>
+              <td>Sala 3</td>
+              <td>El Portal, Jerez</td>
+              <td>musicaWorkshop</td>
+              <td>mackie profx12</td>
+              <td>Hartke A70</td>
+              <td>Mesa Boogie x2</td>
+              <td>Sennheiser E845 x2</td>
+              <td>Sí</td>
+              <td>15</td>
               <td>3€</td>
             </tr>
           </tbody>
@@ -179,47 +267,125 @@
           <img src="../img/R.jfif" alt="Estudio de Grabación" />
         </article>
         <!-- Tabla de datos para Estudios de Grabación -->
-        <table>
+        <table class="tablaGrande">
           <!-- Cabecera de la tabla -->
           <thead>
             <tr>
               <th>Estudio</th>
-              <th>Dato1</th>
-              <th>Dato2</th>
+              <th>Ubicación</th>
+              <th>¿Batería?</th>
+              <th>Equipo</th>
+              <th>Software</th>
               <th>Capacidad</th>
-              <th>Dato3</th>
-              <th>Dato4</th>
-              <th>Dato5</th>
+              <th>Coste (€/h)</th>
             </tr>
           </thead>
           <!-- Cuerpo de la tabla -->
           <tbody>
             <!-- Filas con datos de ejemplo -->
             <tr>
-              <td>Ejemplo1</td>
-              <td>Ejemplo1</td>
-              <td>Ejemplo1</td>
-              <td>Ejemplo1</td>
+              <td>Estudio 1</td>
+              <td>Puerto Real</td>
+              <td>Sí</td>
+              <td>Mac Pro (2013)</td>
+              <td>Garaje Band</td>
               <td>5</td>
-              <td>Ejemplo1</td>
               <td>15</td>
             </tr>
             <tr>
-              <td>Ejemplo2</td>
-              <td>Ejemplo2</td>
-              <td>Ejemplo2</td>
-              <td>Ejemplo2</td>
+              <td>Estudio 2</td>
+              <td>Jerez</td>
+              <td>Sí</td>
+              <td>Portatil Asus</td>
+              <td>FL-Studio</td>
               <td>10</td>
-              <td>Ejemplo2</td>
               <td>20</td>
             </tr>
             <tr>
-              <td>Ejemplo3</td>
-              <td>Ejemplo3</td>
-              <td>Ejemplo3</td>
-              <td>Ejemplo3</td>
+              <td>Estudio 3</td>
+              <td>Barbate</td>
+              <td>❌</td>
+              <td>HP Slim</td>
+              <td>Reaper</td>
               <td>2</td>
-              <td>Ejemplo3</td>
+              <td>10</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="tablaPequenia">
+          <!-- Cabecera de la tabla -->
+          <thead>
+            <tr>
+              <th>Estudio</th>
+              <th>Ubicación</th>
+              <th>¿Batería?</th>
+              <th>Equipo</th>
+              <th>Software</th>
+              <th>Capacidad</th>
+              <th>Coste (€/h)</th>
+            </tr>
+          </thead>
+          <!-- Cuerpo de la tabla -->
+          <tbody>
+            <tr>
+              <td>Estudio 1</td>
+              <td>Puerto Real</td>
+              <td>Sí</td>
+              <td>Mac Pro (2013)</td>
+              <td>Garaje Band</td>
+              <td>5</td>
+              <td>15</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="tablaPequenia">
+          <!-- Cabecera de la tabla -->
+          <thead>
+            <tr>
+              <th>Estudio</th>
+              <th>Ubicación</th>
+              <th>¿Batería?</th>
+              <th>Equipo</th>
+              <th>Software</th>
+              <th>Capacidad</th>
+              <th>Coste (€/h)</th>
+            </tr>
+          </thead>
+          <!-- Cuerpo de la tabla -->
+          <tbody>
+            <tr>
+              <td>Estudio 2</td>
+              <td>Jerez</td>
+              <td>Sí</td>
+              <td>Portatil Asus</td>
+              <td>FL-Studio</td>
+              <td>10</td>
+              <td>20</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="tablaPequenia">
+          <!-- Cabecera de la tabla -->
+          <thead>
+            <tr>
+              <th>Estudio</th>
+              <th>Ubicación</th>
+              <th>¿Batería?</th>
+              <th>Equipo</th>
+              <th>Software</th>
+              <th>Capacidad</th>
+              <th>Coste (€/h)</th>
+            </tr>
+          </thead>
+          <!-- Cuerpo de la tabla -->
+          <tbody>
+            <tr>
+              <td>Estudio 3</td>
+              <td>Barbate</td>
+              <td>No</td>
+              <td>HP Slim</td>
+              <td>Reaper</td>
+              <td>2</td>
               <td>10</td>
             </tr>
           </tbody>
