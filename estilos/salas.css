@@ -18,6 +18,13 @@
 #enlaces > .bloqueNaranja {
 	background-color: #ffb46c;
 	margin: 1em;
+	/* Se sombrea cuando hover */
+	transition: 0.3s;
+	
+}
+
+#enlaces > .bloqueNaranja:hover {
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 main > div + div {

@@ -160,6 +160,7 @@ header nav a {
 	font-family: "Alegreya Sans SC", sans-serif;
 	font-weight: 500;
 	font-size: 3em;
+	transition: 0.3s;
 }
 header nav a:hover {
 	color: #ffb46c;
@@ -187,6 +188,7 @@ footer a {
 	font-family: Arial;
 	margin: 0.7em;
 	color: #fbf8f8;
+	transition: 0.3s;
 }
 
 /* Barritas del footer */
@@ -219,6 +221,17 @@ footer a {
 	width: 28px;
 }
 
+footer a>img {
+	transition: 0.3s;
+}
+footer a:hover {
+	transform: scale(1.3);
+}
+footer a>img:hover {
+	transform: scale(1.3);
+}
+
+
 /* <----------------------- Estilo del botón flotante -----------------------> */
 #botonSubir {
 	position: fixed;
@@ -228,11 +241,16 @@ footer a {
 	opacity: 0; /* Inicialmente oculto */
 	transition: opacity 0.3s, transform 0.3s; /* Transiciones suaves */
 }
+#botonSubir.mostrar:hover {
+	/* Se agranda la imagen*/
+	transform: scale(1.3);
+
+}
 
 #botonSubir.mostrar {
 	/* Estilos cuando se muestra */
 	opacity: 1;
-	transform: scale(1.1); /* Agrandar un poco */
+	transform: scale(0.8); /* Enpequeñecer un poco */
 }
 @media (max-width: 77em) {
 	main {
