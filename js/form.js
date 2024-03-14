@@ -79,7 +79,7 @@ function validacionFormulario() {
     let nErrores = errores.length;
     let inputs = document.querySelectorAll("form input");
     for (let i = 0; i < nErrores; i++) errores[i].parentNode.removeChild(errores[i]);
-    for (let i = 0; i < inputs.length - 1; i++) inputs[i].style.backgroundColor = "#d9d9d9";
+    for (let i = 0; i < inputs.length - 1; i++) inputs[i].removeAttribute("style");
 
     //Validacion del nombre
     if (!(/^[a-zA-Z]+$/.test(nombre.value))) {
@@ -87,7 +87,7 @@ function validacionFormulario() {
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("El campo nombre es erroneo"));
         document.getElementById("problemas").appendChild(error);
-        nombre.style.backgroundColor = "#EB1700";
+        nombre.style.border = "2px solid #EB1700";
     }
 
     //Validacion de los apellidos
@@ -96,7 +96,7 @@ function validacionFormulario() {
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("El campo apellidos es erroneo"));
         document.getElementById("problemas").appendChild(error);
-        apellidos.style.backgroundColor = "#EB1700";
+        apellidos.style.border = "2px solid #EB1700";
     }
 
     //Validacion de la fecha de nacimiento
@@ -107,7 +107,7 @@ function validacionFormulario() {
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("El campo fecha de nacimiento es erroneo"));
         document.getElementById("problemas").appendChild(error);
-        fechaNac.style.backgroundColor = "#EB1700";
+        fechaNac.style.border = "2px solid #EB1700";
     }
 
     //Validacion del email
@@ -116,7 +116,7 @@ function validacionFormulario() {
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("El campo email es erroneo"));
         document.getElementById("problemas").appendChild(error);
-        email.style.backgroundColor = "#EB1700";
+        email.style.border = "2px solid #EB1700";
     }
 
     //Validacion del telefono
@@ -125,7 +125,7 @@ function validacionFormulario() {
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("El campo telefono es erroneo"));
         document.getElementById("problemas").appendChild(error);
-        telefono.style.backgroundColor = "#EB1700";
+        telefono.style.border = "2px solid #EB1700";
     }
 
     //Eleccion de sala, que tiene que estar seleccionado si o si nos guste o no
@@ -135,7 +135,7 @@ function validacionFormulario() {
         let error = document.createElement("p");
         error.appendChild(document.createTextNode("Debes seleccionar un tipo de sala"));
         document.getElementById("problemas").appendChild(error);
-        eleccionSala.style.backgroundColor = "#EB1700";
+        eleccionSala.style.border = "2px solid #EB1700";
     }
     else {
         //Validacion para Sala de ensayo
@@ -150,7 +150,7 @@ function validacionFormulario() {
                 let error = document.createElement("p");
                 error.appendChild(document.createTextNode("Debes seleccionar la sala que quieres reservar"));
                 document.getElementById("problemas").appendChild(error);
-                salaReservada.style.backgroundColor = "#EB1700";
+                salaReservada.style.border = "2px solid #EB1700";
             }
             else {
                 //Como no tenemos base de datos, estas cosas van fijas ahora mismo.
@@ -162,7 +162,7 @@ function validacionFormulario() {
                         let error = document.createElement("p");
                         error.appendChild(document.createTextNode("Aforo incorrecto para esta sala"));
                         document.getElementById("problemas").appendChild(error);
-                        participantes.style.backgroundColor = "#EB1700";
+                        participantes.style.border = "2px solid #EB1700";
                     }
                 }
                 // Si la sala es la 2
@@ -172,7 +172,7 @@ function validacionFormulario() {
                         let error = document.createElement("p");
                         error.appendChild(document.createTextNode("Aforo incorrecto para esta sala"));
                         document.getElementById("problemas").appendChild(error);
-                        participantes.style.backgroundColor = "#EB1700";
+                        participantes.style.border = "2px solid #EB1700";
                     }
                 }
                 // Si la sala es la 3
@@ -182,7 +182,7 @@ function validacionFormulario() {
                         let error = document.createElement("p");
                         error.appendChild(document.createTextNode("Aforo incorrecto para esta sala"));
                         document.getElementById("problemas").appendChild(error);
-                        participantes.style.backgroundColor = "#EB1700";
+                        participantes.style.border = "2px solid #EB1700";
 
                     }
                 }
@@ -195,7 +195,7 @@ function validacionFormulario() {
                 let error = document.createElement("p");
                 error.appendChild(document.createTextNode("Fecha de reserva incorrecta"));
                 document.getElementById("problemas").appendChild(error);
-                fechaReserva.style.backgroundColor = "#EB1700";
+                fechaReserva.style.border = "2px solid #EB1700";
             }
             // Comprobamos las horas de reserva
             // Si no se ha seleccionado ninguna hora o se han seleccionado mas de 3
@@ -239,7 +239,7 @@ function validacionFormulario() {
                 let error = document.createElement("p");
                 error.appendChild(document.createTextNode("Debes seleccionar el estudio que quieres reservar"));
                 document.getElementById("problemas").appendChild(error);
-                salaReservada.style.backgroundColor = "#EB1700";
+                salaReservada.style.border = "2px solid #EB1700";
             }
             else {
                 //Como no tenemos base de datos, estas cosas van fijas ahora mismo. Cuando tengamos una esto hay que tocarlo para que sea dinamica con el servidor
@@ -250,7 +250,7 @@ function validacionFormulario() {
                         let error = document.createElement("p");
                         error.appendChild(document.createTextNode("Aforo incorrecto para este estudio"));
                         document.getElementById("problemas").appendChild(error);
-                        participantes.style.backgroundColor = "#EB1700";
+                        participantes.style.border = "2px solid #EB1700";
                     }
                 }
                 // Si el estudio es el 2
@@ -260,7 +260,7 @@ function validacionFormulario() {
                         let error = document.createElement("p");
                         error.appendChild(document.createTextNode("Aforo incorrecto para este estudio"));
                         document.getElementById("problemas").appendChild(error);
-                        participantes.style.backgroundColor = "#EB1700";
+                        participantes.style.border = "2px solid #EB1700";
                     }
                 }
                 // Si el estudio es el 3
@@ -270,7 +270,7 @@ function validacionFormulario() {
                         let error = document.createElement("p");
                         error.appendChild(document.createTextNode("Aforo incorrecto para este estudio"));
                         document.getElementById("problemas").appendChild(error);
-                        participantes.style.backgroundColor = "#EB1700";
+                        participantes.style.border = "2px solid #EB1700";
 
                     }
                 }
@@ -283,7 +283,7 @@ function validacionFormulario() {
                 let error = document.createElement("p");
                 error.appendChild(document.createTextNode("Fecha de reserva incorrecta"));
                 document.getElementById("problemas").appendChild(error);
-                fechaReserva.style.backgroundColor = "#EB1700";
+                fechaReserva.style.border = "2px solid #EB1700";
             }
             // Comprobamos las horas de reserva
             // Si no se ha seleccionado ninguna hora o se han seleccionado mas de 3
