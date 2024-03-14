@@ -197,7 +197,10 @@ input[type="submit"]:hover {
 	.TablaHorarios button {
 		padding-left: 7em;
 		padding-right: 7em;
-
+	}
+	.TablaHorarios button:hover {
+		background-color: none;
+		color: none;
 	}
 
 }
