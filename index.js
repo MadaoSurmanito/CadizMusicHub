@@ -15,8 +15,9 @@ app.use(logger('dev'));
 app.use(cors());
 
 // const reservasService = require('./routes/reservas-service');
-const reservas = require('./routes/reservas');
-app.use('/reservas', reservas);
+const baseDeDatos = require('./routes/reservas-service');
+const reservasAPI = require('./routes/reservas');
+app.use('/reservas', reservasAPI);
 app.use(express.static(path.join(__dirname, 'public')));
 
 const server = http.createServer(app);
@@ -25,13 +26,13 @@ server.listen(PORT, function () {
 	console.log('Server up and running on localhost:' + PORT);
 });
 
-// moviesService.connectDb(function (err) {
-//     if (err) {
-//         console.log('Could not connect with MongoDB – moviesService');
-//         process.exit(1);
-//     }
+baseDeDatos.connectDb(function (err) {
+     if (err) {
+         console.log('Could not connect with MongoDB – moviesService');
+         process.exit(1);
+     }
 
-//     server.listen(PORT, function () {
-//         console.log('Server up and running on localhost:' + PORT);
-//     });
-// });
+     server.listen(PORT, function () {
+         console.log('Server up and running on localhost:' + PORT);
+     });
+ });
