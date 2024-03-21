@@ -22,10 +22,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const server = http.createServer(app);
 
-server.listen(PORT, function () {
-	console.log('Server up and running on localhost:' + PORT);
-});
-
 baseDeDatos.connectDb(function (err) {
      if (err) {
          console.log('Could not connect with MongoDB – moviesService');

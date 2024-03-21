@@ -8,6 +8,7 @@ const Reservas = function () {
 
 Reservas.prototype.connectDb = function (callback) {
     MongoClient.connect("mongodb+srv://alejandrosanzhuerta:FEC63469FE850FD16C03C7763D2B84A6@ash-pnet-2023-2024.rkdqjy6.mongodb.net/?retryWrites=true&w=majority&appName=ash-pnet-2023-2024",
+        {useNewUrlParser: true, useUnifiedTopology: true},
         function (err, database) {
             if (err) {
 				console.log(err);
