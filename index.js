@@ -14,7 +14,6 @@ app.use(express.urlencoded({
 app.use(logger('dev'));
 app.use(cors());
 
-// const reservasService = require('./routes/reservas-service');
 const baseDeDatos = require('./routes/reservas-service');
 const reservasAPI = require('./routes/reservas');
 app.use('/reservas', reservasAPI);

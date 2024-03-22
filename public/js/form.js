@@ -41,6 +41,23 @@ document.addEventListener("DOMContentLoaded", function () {
     let formularioReserva = document.forms[0];
     formularioReserva.addEventListener("submit", function (event) {
         if (!validacionFormulario()) event.preventDefault(); // Detener el envío del formulario
+        else
+        {
+            if(formularioReserva.method == 'post')
+            {
+                $.ajax({
+                    url: '/reservas',
+                    type: 'POST',
+                    data: ConstructorJSONReserva(),
+                    success: function(data) {
+                        console.log(data);
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+            }
+        }
     });
 });
 
@@ -435,4 +452,38 @@ function PrecioTotalEstudio() {
 
     document.getElementById("CosteTotalEstudio").innerHTML = "Coste total: " + precioTotal + " €";
     document.getElementById("precioTotal").value = precioTotal;
+}
+
+function ConstructorJSONReserva()
+{
+    let reserva = {};
+    reserva.nombre = document.getElementById("nombre").value;
+    reserva.apellidos = document.getElementById("apellidos").value;
+    reserva.fechaNac = document.getElementById("fechaNac").value;
+    reserva.email = document.getElementById("email").value;
+    reserva.telefono = document.getElementById("telefono").value;
+    reserva.tipoSala = document.getElementById("tipoEs").value;
+    if(reserva.tipoSala == 1)
+    {
+        reserva.participantes = document.getElementById("participantesSal").value;
+        reserva.fechaReserva = document.getElementById("fechaReservaSal").value;
+        reserva.sala = document.getElementById("sala").value;
+        reserva.tramoHorario = horasSala;
+        reserva.datosArtisticos = {};
+        reserva.datosArtisticos.nombreArtistico = document.getElementById("nombreArtistico").value;
+        reserva.datosArtisticos.genero = document.getElementById("genero").value;
+        reserva.datosArtisticos.instagram = document.getElementById("instagram").value;
+        reserva.datosArtisticos.spotify = document.getElementById("spotify").value;
+
+    }
+    else
+    {
+        reserva.participantes = document.getElementById("participantesEs").value;
+        reserva.fechaReserva = document.getElementById("fechaReservaEs").value;
+        reserva.estudio = document.getElementById("estudio").value;
+        reserva.tramoHorario = horasEstudio;
+        reserva.tecnico = document.getElementById("tecnico").checked;
+    }
+    reserva.precioTotal = document.getElementById("precioTotal").value;
+    return reserva;
 }
