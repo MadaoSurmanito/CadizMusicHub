@@ -1,5 +1,6 @@
-function getReserva(ReservaId) {
-  let myUrl = '/Reservas/' + ReservaId
+function getReserva() {
+  let email = document.getElementById('emailGetReserva').value;
+  let myUrl = '/Reservas/' + email
   $.ajax({
     type: 'GET',
     dataType: 'json',

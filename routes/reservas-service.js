@@ -26,8 +26,8 @@ Reservas.prototype.add = function (movie, callback) {
     return db.insertOne(movie, callback);
 };
 
-Reservas.prototype.get = function (_id, callback) {
-    return db.find({_id: ObjectId(_id)}).toArray(callback);
+Reservas.prototype.get = function (_email, callback) {
+    return db.find({email: String(_email)}).toArray(callback);
 };
 
 Reservas.prototype.getAll = function (callback) {
