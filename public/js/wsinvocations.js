@@ -79,7 +79,6 @@ function postReserva2() {
     },
   })
 }
-
 function getAllReservas() {
   let myUrl = '/Reservas'
   $.ajax({
@@ -87,16 +86,9 @@ function getAllReservas() {
     dataType: 'json',
     url: myUrl,
     success: function (data) {
-      // Hacer que se vea mejor
-      // Genera 2 tablas, uno con datos de las salas de ensayo y otro con datos de los estudios de grabación
-      // Formato del JSON de reserva de sala de ensayo:
-      // {"_id":"65fd6801f8d136a42cc68f76","nombre":"Alejandro","apellidos":"Sanz Huerta","fechaNac":"2001-07-20","email":"ash.fuertecortadura@gmail.com","telefono":"603480001","tipoSala":"1","participantes":"2","fechaReserva":"2025-01-20","sala":"2","tramoHorario":["10","11","12"],"datosArtisticos":{"nombreArtistico":"ODISEA","genero":"Metal","instagram":"","spotify":""},"precioTotal":"36"}]
-      // Formato del JSON de reserva de estudio de grabación:
-      // {"_id":"65fd67fde21dfda18720dca0","nombre":"Alejandro","apellidos":"Ramos Rodriguez","fechaNac":"0098-06-16","email":"alejandro@probandocosas.esi","telefono":"555555555","tipoSala":"2","participantes":"5","fechaReserva":"2024-03-31","estudio":"2","tramoHorario":["13","14","15"],"tecnico":"true","precioTotal":"80"},
-      // Ordename el JSON poniendo primero los que tengan tipoSala 1 y luego los que tengan tipoSala 2
-      // En cada tabla, añade una fila con el total de reservas y el total de precio de todas las reservas
       let res = ''
       // Si no hay reservas
+      res += '<h2>Reservas Salas de Ensayo</h2>'
       res += '<table border="1">'
       res +=
         '<tr><th>Borrar</th><th>Nombre</th><th>Apellidos</th><th>Fecha de nacimiento</th><th>Email</th><th>Teléfono</th><th>Participantes</th><th>Fecha de reserva</th><th>Sala</th><th>Tramo horario</th><th>Nombre artístico</th><th>Género</th><th>Instagram</th><th>Spotify</th><th>Precio total</th></tr>'
@@ -109,26 +101,29 @@ function getAllReservas() {
           '<td><button onclick="deleteReserva(\'' +
           data[i]._id +
           '\')">Borrar</button></td>'
-        res += '<td>' + data[i].nombre + '</td>'
-        res += '<td>' + data[i].apellidos + '</td>'
-        res += '<td>' + data[i].fechaNac + '</td>'
-        res += '<td>' + data[i].email + '</td>'
-        res += '<td>' + data[i].telefono + '</td>'
-        res += '<td>' + data[i].participantes + '</td>'
-        res += '<td>' + data[i].fechaReserva + '</td>'
-        res += '<td>' + data[i].sala + '</td>'
-        res += '<td>' + data[i].tramoHorario + '</td>'
-        // Desglomera los datos artísticos
-        res += '<td>' + data[i].datosArtisticos.nombreArtistico + '</td>'
-        res += '<td>' + data[i].datosArtisticos.genero + '</td>'
-        res += '<td>' + data[i].datosArtisticos.instagram + '</td>'
-        res += '<td>' + data[i].datosArtisticos.spotify + '</td>'
-        res += '<td>' + data[i].precioTotal + '</td>'
+          // hacer que se pueda editar
+        res += '<td><input type="text" id="nombre" value="' + data[i].nombre + '"></td>' 
+        res += '<td><input type="text" id="apellidos" value="' + data[i].apellidos + '"></td>'
+        res += '<td><input type="text" id="fechaNac" value="' + data[i].fechaNac + '"></td>'
+        res += '<td><input type="text" id="email" value="' + data[i].email + '"></td>'
+        res += '<td><input type="text" id="telefono" value="' + data[i].telefono + '"></td>'
+        res += '<td><input type="text" id="participantes" value="' + data[i].participantes + '"></td>'
+        res += '<td><input type="text" id="fechaReserva" value="' + data[i].fechaReserva + '"></td>'
+        res += '<td><input type="text" id="sala" value="' + data[i].sala + '"></td>'
+        res += '<td><input type="text" id="tramoHorario" value="' + data[i].tramoHorario + '"></td>'
+        res += '<td><input type="text" id="nombreArtistico" value="' + data[i].datosArtisticos.nombreArtistico + '"></td>'
+        res += '<td><input type="text" id="genero" value="' + data[i].datosArtisticos.genero + '"></td>'
+        res += '<td><input type="text" id="instagram" value="' + data[i].datosArtisticos.instagram + '"></td>'
+        res += '<td><input type="text" id="spotify" value="' + data[i].datosArtisticos.spotify + '"></td>'
+        res += '<td><input type="text" id="precioTotal" value="' + data[i].precioTotal + '"></td>'
+        res += '<td><button onclick="updateReserva(\'' + data[i]._id + '\')">Actualizar</button></td>'
+        
         res += '</tr>'
         i++
       }
       res += '</table>'
       res += '<br>'
+      res += '<h2>Reservas Estudios de Grabación</h2>'
       res += '<table border="1">'
       res +=
         '<tr><th>Borrar</th><th>Nombre</th><th>Apellidos</th><th>Fecha de nacimiento</th><th>Email</th><th>Teléfono</th><th>Participantes</th><th>Fecha de reserva</th><th>Estudio</th><th>Tramo horario</th><th>Técnico</th><th>Precio total</th></tr>'
@@ -165,7 +160,6 @@ function getAllReservas() {
     },
   })
 }
-
 function deleteReserva(ReservaId) {
   let myUrl = '/Reservas/' + ReservaId
   $.ajax({
