@@ -24,11 +24,11 @@ const server = http.createServer(app);
 
 baseDeDatos.connectDb(function (err) {
      if (err) {
-         console.log('Could not connect with MongoDB – moviesService');
+         console.log('Oh no! Parece que ha ocurrido un error al conectar con la base de datos.');
          process.exit(1);
      }
 
      server.listen(PORT, function () {
-         console.log('Server up and running on localhost:' + PORT);
+         console.log('Todo listo, servidor levantado en ' + PORT);
      });
  });

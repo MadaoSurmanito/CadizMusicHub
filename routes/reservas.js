@@ -43,7 +43,7 @@ router.get('/', function (req, res) {
             });
         } else if (movies.length == 0) {
             res.status(500).send({
-                msg: "movies null"
+                msg: "No hay reservas ahora mismo."
             });
         } else {
             res.status(200).send(movies);
@@ -56,7 +56,7 @@ router.post('/', function (req, res) {
     let movie = req.body;
     if (Object.entries(movie).length === 0) {
         res.status(400).send({
-            msg: 'Empty movie'
+            msg: 'No me diste datos, que esperas que haga?'
         });
     }
     else {
@@ -68,7 +68,7 @@ router.post('/', function (req, res) {
             }
             else {
                 res.status(201).send({
-                    msg: 'Film created!'
+                    msg: 'Reserva registrada'
                 });
             }
         });
@@ -84,7 +84,7 @@ router.delete('/', function (req, res) {
             });
         } else {
             res.status(200).send({
-                msg: 'Films deleted!'
+                msg: 'Reservas eliminadas'
             });
         }
     });
@@ -100,7 +100,7 @@ router.get('/:_id', function (req, res) {
             });
         } else if (movie.length == 0) {
             res.status(500).send({
-                msg: "movie is null"
+                msg: "Esa reserva no exite sabes?"
             });
         } else {
             res.status(200).send(movie);
@@ -120,11 +120,11 @@ router.put('/:_id', function (req, res) {
             });
         } else if (numUpdates.modifiedCount === 0) {
             res.status(500).send({
-                msg: "Not updated"
+                msg: "Algo fue mal, no se pudo actualizar la reserva."
             });
         } else {
             res.status(200).send({
-                msg: 'Film updated!'
+                msg: 'Cambios realizados!'
             });
         }
     });
@@ -140,7 +140,7 @@ router.delete('/:_id', function (req, res) {
             })
         } else {
             res.status(200).send({
-                msg: 'Film deleted!',
+                msg: 'Reserva eliminada!',
             })
         }
     })
