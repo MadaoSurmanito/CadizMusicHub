@@ -6,7 +6,7 @@ function getReserva() {
     dataType: 'json',
     url: myUrl,
     success: function (data) {
-      $('#resReserva').html(JSON.stringify(data[0]))
+        MostrarDatosSalas(data);
     },
     error: function (res) {
       let mensaje = JSON.parse(res.responseText)
@@ -87,7 +87,52 @@ function getAllReservas() {
     dataType: 'json',
     url: myUrl,
     success: function (data) {
-      let res = ''
+        MostrarDatosSalas(data);
+    },
+    // si da un error 500, es que no hay reservas
+
+    error: function (res) {
+      let mensaje = JSON.parse(res.responseText)
+      $('#resReserva').html(mensaje.msg)
+    },
+  })
+}
+function deleteReserva(ReservaId) {
+  let myUrl = '/Reservas/' + ReservaId
+  $.ajax({
+    type: 'DELETE',
+    dataType: 'json',
+    url: myUrl,
+    success: function (data) {
+      $('#resReserva').html(data.msg)
+    },
+    error: function (res) {
+      alert('ERROR: ' + res.statusText)
+    },
+  })
+}
+function deleteAllReservas() {
+  $.ajax({
+    type: 'DELETE',
+    url: '/Reservas',
+    success: function (data) {
+      $('#resReserva').html(data)
+    },
+    error: function (res) {
+      alert('ERROR: ' + res.statusText)
+    },
+  })
+}
+
+function mostrarReservaUsuario()
+{
+  let div = '<div><p>Introduce el email del cuál quieres sacar las reservas</p><input type="text" id="emailGetReserva"><input type="button" value="Obtener Reservas" onclick="getReserva()"></div>';
+  $('#resReserva').html(div);
+}
+
+function MostrarDatosSalas(data)
+{
+  let res = ''
       // Si no hay reservas
       res += '<h2>Reservas Salas de Ensayo</h2>'
       res += '<table border="1">'
@@ -152,38 +197,4 @@ function getAllReservas() {
       }
       res += '</table>'
       $('#resReserva').html(res)
-    },
-    // si da un error 500, es que no hay reservas
-
-    error: function (res) {
-      let mensaje = JSON.parse(res.responseText)
-      $('#resReserva').html(mensaje.msg)
-    },
-  })
-}
-function deleteReserva(ReservaId) {
-  let myUrl = '/Reservas/' + ReservaId
-  $.ajax({
-    type: 'DELETE',
-    dataType: 'json',
-    url: myUrl,
-    success: function (data) {
-      $('#resReserva').html(data.msg)
-    },
-    error: function (res) {
-      alert('ERROR: ' + res.statusText)
-    },
-  })
-}
-function deleteAllReservas() {
-  $.ajax({
-    type: 'DELETE',
-    url: '/Reservas',
-    success: function (data) {
-      $('#resReserva').html(data)
-    },
-    error: function (res) {
-      alert('ERROR: ' + res.statusText)
-    },
-  })
 }

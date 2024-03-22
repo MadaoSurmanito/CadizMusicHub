@@ -65,15 +65,11 @@
             <div id="Botones">
                 <input type="button" value="POST RESERVA (Ejemplo Sala)" onclick="postReserva1()" />
                 <input type="button" value="POST RESERVA (Ejemplo Estudio)" onclick="postReserva2()" />
-                <input type="button" value="GET RESERVAS" onclick="getAllReservas()" />
-                <input type="button" value="DELETE ALL" onclick="deleteAllReservas()" />
+                <input type="button" value="Obtener todas las reservas" onclick="getAllReservas()" />
+                <input type="button" value="Borrar todas las reservas" onclick="deleteAllReservas()" />
+                <input type="button" value="Obtener las reservas de un usuario" onclick="mostrarReservaUsuario()" />
             </div>
             <div>
-              <div id="getReservaConcreta">
-                <p>Introduce el email del cuál quieres sacar las reservas</p>
-                <input type="text" id="emailGetReserva">
-                <input type="button" value="Obtener Reservas" onclick="getReserva()">
-              </div>
               <p id="resReserva"></p>
             </div>
         </div>
