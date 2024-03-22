@@ -1,3 +1,8 @@
+document.addEventListener("click", ev => {
+  if (ev.target.matches("#salasEnsayo .botonActualizar")) updateReserva(ev.target, 1);
+  if (ev.target.matches("#estudiosGrabacion .botonActualizar")) updateReserva(ev.target, 2);
+});
+
 function getReserva() {
   let email = document.getElementById('emailGetReserva').value;
   let myUrl = '/Reservas/' + email
@@ -135,9 +140,9 @@ function MostrarDatosSalas(data)
   let res = ''
       // Si no hay reservas
       res += '<h2>Reservas Salas de Ensayo</h2>'
-      res += '<table border="1">'
+      res += '<table id="salasEnsayo" border="1">'
       res +=
-        '<tr><th>Borrar</th><th>Nombre</th><th>Apellidos</th><th>Fecha de nacimiento</th><th>Email</th><th>Teléfono</th><th>Participantes</th><th>Fecha de reserva</th><th>Sala</th><th>Tramo horario</th><th>Nombre artístico</th><th>Género</th><th>Instagram</th><th>Spotify</th><th>Precio total</th></tr>'
+        '<tr><th>Borrar</th><th>Actualizar</th><th>Nombre</th><th>Apellidos</th><th>Fecha de nacimiento</th><th>Email</th><th>Teléfono</th><th>Participantes</th><th>Fecha de reserva</th><th>Sala</th><th>Tramo horario</th><th>Nombre artístico</th><th>Género</th><th>Instagram</th><th>Spotify</th><th>Precio total</th></tr>'
       let i = 0
 
       while (i < data.length && data[i].tipoSala == 1) {
@@ -147,22 +152,23 @@ function MostrarDatosSalas(data)
           '<td><button onclick="deleteReserva(\'' +
           data[i]._id +
           '\')">Borrar</button></td>'
-          // hacer que se pueda editar
-        res += '<td><input type="text" id="nombre" value="' + data[i].nombre + '"></td>' 
-        res += '<td><input type="text" id="apellidos" value="' + data[i].apellidos + '"></td>'
-        res += '<td><input type="text" id="fechaNac" value="' + data[i].fechaNac + '"></td>'
-        res += '<td><input type="text" id="email" value="' + data[i].email + '"></td>'
-        res += '<td><input type="text" id="telefono" value="' + data[i].telefono + '"></td>'
-        res += '<td><input type="text" id="participantes" value="' + data[i].participantes + '"></td>'
-        res += '<td><input type="text" id="fechaReserva" value="' + data[i].fechaReserva + '"></td>'
-        res += '<td><input type="text" id="sala" value="' + data[i].sala + '"></td>'
-        res += '<td><input type="text" id="tramoHorario" value="' + data[i].tramoHorario + '"></td>'
-        res += '<td><input type="text" id="nombreArtistico" value="' + data[i].datosArtisticos.nombreArtistico + '"></td>'
-        res += '<td><input type="text" id="genero" value="' + data[i].datosArtisticos.genero + '"></td>'
-        res += '<td><input type="text" id="instagram" value="' + data[i].datosArtisticos.instagram + '"></td>'
-        res += '<td><input type="text" id="spotify" value="' + data[i].datosArtisticos.spotify + '"></td>'
-        res += '<td><input type="text" id="precioTotal" value="' + data[i].precioTotal + '"></td>'
-        res += '<td><button onclick="updateReserva(\'' + data[i]._id + '\')">Actualizar</button></td>'
+        res += '<td><button class="botonActualizar">Actualizar</button></td>'
+        res += '<td hidden><input type="hidden" value="' + data[i]._id + '"></td>' 
+        res += '<td><input type="text" value="' + data[i].nombre + '"></td>' 
+        res += '<td><input type="text" value="' + data[i].apellidos + '"></td>'
+        res += '<td><input type="text" value="' + data[i].fechaNac + '"></td>'
+        res += '<td><input type="text" value="' + data[i].email + '"></td>'
+        res += '<td><input type="text" value="' + data[i].telefono + '"></td>'
+        res += '<td><input type="text" value="' + data[i].participantes + '"></td>'
+        res += '<td><input type="text" value="' + data[i].fechaReserva + '"></td>'
+        res += '<td><input type="text" value="' + data[i].sala + '"></td>'
+        res += '<td><input type="text" value="' + data[i].tramoHorario + '"></td>'
+        res += '<td><input type="text" value="' + data[i].datosArtisticos.nombreArtistico + '"></td>'
+        res += '<td><input type="text" value="' + data[i].datosArtisticos.genero + '"></td>'
+        res += '<td><input type="text" value="' + data[i].datosArtisticos.instagram + '"></td>'
+        res += '<td><input type="text" value="' + data[i].datosArtisticos.spotify + '"></td>'
+        res += '<td><input type="text" value="' + data[i].precioTotal + '"></td>'
+        
         
         res += '</tr>'
         i++
@@ -170,9 +176,9 @@ function MostrarDatosSalas(data)
       res += '</table>'
       res += '<br>'
       res += '<h2>Reservas Estudios de Grabación</h2>'
-      res += '<table border="1">'
+      res += '<table id="estudiosGrabacion" border="1">'
       res +=
-        '<tr><th>Borrar</th><th>Nombre</th><th>Apellidos</th><th>Fecha de nacimiento</th><th>Email</th><th>Teléfono</th><th>Participantes</th><th>Fecha de reserva</th><th>Estudio</th><th>Tramo horario</th><th>Técnico</th><th>Precio total</th></tr>'
+        '<tr><th>Borrar</th><th>Actualizar</th><th>Nombre</th><th>Apellidos</th><th>Fecha de nacimiento</th><th>Email</th><th>Teléfono</th><th>Participantes</th><th>Fecha de reserva</th><th>Estudio</th><th>Tramo horario</th><th>Técnico</th><th>Precio total</th></tr>'
 
       while (i < data.length && data[i].tipoSala == 2) {
         res += '<tr>'
@@ -181,20 +187,75 @@ function MostrarDatosSalas(data)
           '<td><button onclick="deleteReserva(\'' +
           data[i]._id +
           '\')">Borrar</button></td>'
-        res += '<td>' + data[i].nombre + '</td>'
-        res += '<td>' + data[i].apellidos + '</td>'
-        res += '<td>' + data[i].fechaNac + '</td>'
-        res += '<td>' + data[i].email + '</td>'
-        res += '<td>' + data[i].telefono + '</td>'
-        res += '<td>' + data[i].participantes + '</td>'
-        res += '<td>' + data[i].fechaReserva + '</td>'
-        res += '<td>' + data[i].estudio + '</td>'
-        res += '<td>' + data[i].tramoHorario + '</td>'
-        res += '<td>' + data[i].tecnico + '</td>'
-        res += '<td>' + data[i].precioTotal + '</td>'
+          res += '<td><button class="botonActualizar">Actualizar</button></td>'
+          res += '<td hidden><input type="hidden" value="' + data[i]._id + '"></td>' 
+          res += '<td><input type="text" value="' + data[i].nombre + '"></td>' 
+          res += '<td><input type="text" value="' + data[i].apellidos + '"></td>'
+          res += '<td><input type="text" value="' + data[i].fechaNac + '"></td>'
+          res += '<td><input type="text" value="' + data[i].email + '"></td>'
+          res += '<td><input type="text" value="' + data[i].telefono + '"></td>'
+          res += '<td><input type="text" value="' + data[i].participantes + '"></td>'
+          res += '<td><input type="text" value="' + data[i].fechaReserva + '"></td>'
+          res += '<td><input type="text" value="' + data[i].estudio + '"></td>'
+          res += '<td><input type="text" value="' + data[i].tramoHorario + '"></td>'
+          res += '<td><input type="text" value="' + data[i].tecnico + '"></td>'
+          res += '<td><input type="text" value="' + data[i].precioTotal + '"></td>'
         res += '</tr>'
         i++
       }
       res += '</table>'
       $('#resReserva').html(res)
+}
+
+function updateReserva(target, tipoSala) {
+  let datos = target.parentNode.parentNode.children;
+  let myUrl = '/Reservas/' + datos[2].children[0].value;
+  $.ajax({
+    type: 'PUT',
+    url: myUrl,
+    contentType: 'application/json',
+    dataType: 'text',
+    data: DatosActualizar(datos, tipoSala),
+    success: function (data) {
+      let datos = JSON.parse(data)
+      $('#resReserva').html(datos.msg)
+    },
+    error: function (res) {
+      alert('ERROR: ' + res.statusText)
+    },
+  })
+}
+
+function DatosActualizar(datos, tipoSala) {
+  let reserva = {
+    nombre: datos[3].children[0].value,
+    apellidos: datos[4].children[0].value,
+    fechaNac: datos[5].children[0].value,
+    email: datos[6].children[0].value,
+    telefono: datos[7].children[0].value,
+    participantes: datos[8].children[0].value,
+    fechaReserva: datos[9].children[0].value
+  }
+
+  if(tipoSala == 1)
+  {
+    reserva.sala = datos[10].children[0].value;
+    reserva.tramoHorario = datos[11].children[0].value;
+    reserva.datosArtisticos = {
+      nombreArtistico: datos[12].children[0].value,
+      genero: datos[13].children[0].value,
+      instagram: datos[14].children[0].value,
+      spotify: datos[15].children[0].value,
+    }
+    reserva.precioTotal = datos[16].children[0].value;
+  }
+  else
+  {
+    reserva.estudio = datos[10].children[0].value;
+    reserva.tramoHorario = datos[11].children[0].value;
+    reserva.tecnico = datos[12].children[0].value;
+    reserva.precioTotal = datos[13].children[0].value;
+  }
+
+  return JSON.stringify(reserva)
 }
