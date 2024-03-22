@@ -57,6 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
             }
+
+            event.preventDefault();
+            window.location.href = "/web/index.html";
         }
     });
 });
@@ -306,7 +309,7 @@ function validacionFormulario() {
             // Si no se ha seleccionado ninguna hora o se han seleccionado mas de 3
             // De normal, un usuario no podria seleccionar mas de 3 horas ya que la bloqueamos
             // Sin embargo, esto es un control de seguridad por si alguien intenta modificar el HTML
-            if (horasSala.length > 3 || horasSala.length < 1) {
+            if (horasEstudio.length > 3 || horasEstudio.length < 1) {
                 bien = false;
                 let error = document.createElement("p");
                 error.appendChild(document.createTextNode("Debes seleccionar al menos 1 hora"));
@@ -314,8 +317,8 @@ function validacionFormulario() {
             }
             // Comprobamos que las horas de reserva sean consecutivas
             else {
-                horasSala.sort();
-                if (!horasSala.every(Consecutivos)) {
+                horasEstudio.sort();
+                if (!horasEstudio.every(Consecutivos)) {
                     bien = false;
                     let error = document.createElement("p");
                     error.appendChild(document.createTextNode("El tramo horario debe ser consecutivo"));
@@ -470,11 +473,14 @@ function ConstructorJSONReserva()
         reserva.sala = document.getElementById("sala").value;
         reserva.tramoHorario = horasSala;
         reserva.datosArtisticos = {};
-        reserva.datosArtisticos.nombreArtistico = document.getElementById("nombreArtistico").value;
-        reserva.datosArtisticos.genero = document.getElementById("genero").value;
-        reserva.datosArtisticos.instagram = document.getElementById("instagram").value;
-        reserva.datosArtisticos.spotify = document.getElementById("spotify").value;
-
+        if(document.getElementById("nombreArtistico").value == "") reserva.datosArtisticos.nombreArtistico = "No hay datos";
+        else reserva.datosArtisticos.nombreArtistico = document.getElementById("nombreArtistico").value;
+        if(document.getElementById("genero").value == "") reserva.datosArtisticos.genero = "No hay datos";
+        else reserva.datosArtisticos.genero = document.getElementById("genero").value;
+        if(document.getElementById("instagram").value == "") reserva.datosArtisticos.instagram = "No hay datos";
+        else reserva.datosArtisticos.instagram = document.getElementById("instagram").value;
+        if(document.getElementById("spotify").value == "") reserva.datosArtisticos.spotify = "No hay datos";
+        else reserva.datosArtisticos.spotify = document.getElementById("spotify").value;
     }
     else
     {
