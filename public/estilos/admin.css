@@ -1,0 +1,43 @@
+/* Display flex */
+h1{
+    text-align: center;
+    font-size: 3em;
+    margin: 20px;
+
+}
+
+#Grid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin: 20px;
+}
+#Botones
+{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#Botones input
+{
+    margin: 10px;
+    border-color: #000;
+    cursor: pointer;
+
+    color: #000;
+    transition: background-color 0.5s;
+    border-radius: 10px;
+    /* Texto */
+    letter-spacing: 1px;
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#Botones input:hover
+{
+    background-color: #000;
+    color: #fff;
+}
