@@ -48,19 +48,14 @@ function getAllReservas() {
     url: myUrl,
     success: function (data) {
       // Hacer que se vea mejor
-      // Formato: Película 1: Título: Dunkirk, Director: Christopher Nolan, Año: 2017
-
-      let res = ''
-      data.forEach((data) => {
-        res +=
-          '• Título: ' +
-          data.title +
-          ', Director: ' +
-          data.director +
-          ', Año: ' +
-          data.year +
-          '<br>'
-      })
+      // Genera 2 tablas, uno con datos de las salas de ensayo y otro con datos de los estudios de grabación
+      // Formato del JSON de reserva de sala de ensayo:
+      // {"_id":"65fd6801f8d136a42cc68f76","nombre":"Alejandro","apellidos":"Sanz Huerta","fechaNac":"2001-07-20","email":"ash.fuertecortadura@gmail.com","telefono":"603480001","tipoSala":"1","participantes":"2","fechaReserva":"2025-01-20","sala":"2","tramoHorario":["10","11","12"],"datosArtisticos":{"nombreArtistico":"ODISEA","genero":"Metal","instagram":"","spotify":""},"precioTotal":"36"}]
+      // Formato del JSON de reserva de estudio de grabación:
+      // {"_id":"65fd67fde21dfda18720dca0","nombre":"Alejandro","apellidos":"Ramos Rodriguez","fechaNac":"0098-06-16","email":"alejandro@probandocosas.esi","telefono":"555555555","tipoSala":"2","participantes":"5","fechaReserva":"2024-03-31","estudio":"2","tramoHorario":["13","14","15"],"tecnico":"true","precioTotal":"80"},
+      // Ordename el JSON poniendo primero los que tengan tipoSala 1 y luego los que tengan tipoSala 2
+      // En cada tabla, añade una fila con el total de reservas y el total de precio de todas las reservas
+      
       $('#resReserva').html(res)
     },
     error: function (res) {
