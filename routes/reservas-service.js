@@ -31,7 +31,7 @@ Reservas.prototype.get = function (_id, callback) {
 };
 
 Reservas.prototype.getAll = function (callback) {
-    return db.find({}).toArray(callback);
+    return db.find({}).sort({tipoSala : 1}).toArray(callback);
 };
 
 Reservas.prototype.update = function (_id, updatedMovie, callback) {
