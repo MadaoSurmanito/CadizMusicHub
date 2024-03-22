@@ -473,13 +473,13 @@ function ConstructorJSONReserva()
         reserva.sala = document.getElementById("sala").value;
         reserva.tramoHorario = horasSala;
         reserva.datosArtisticos = {};
-        if(document.getElementById("nombreArtistico").value == "") reserva.datosArtisticos.nombreArtistico = "No hay datos";
+        if(document.getElementById("nombreArtistico").value == "" || document.getElementById("nombreArtistico").value == null) reserva.datosArtisticos.nombreArtistico = "No hay datos";
         else reserva.datosArtisticos.nombreArtistico = document.getElementById("nombreArtistico").value;
-        if(document.getElementById("genero").value == "") reserva.datosArtisticos.genero = "No hay datos";
+        if(document.getElementById("genero").value == "" || document.getElementById("genero").value == null) reserva.datosArtisticos.genero = "No hay datos";
         else reserva.datosArtisticos.genero = document.getElementById("genero").value;
-        if(document.getElementById("instagram").value == "") reserva.datosArtisticos.instagram = "No hay datos";
+        if(document.getElementById("instagram").value == "" || document.getElementById("instagram").value == null) reserva.datosArtisticos.instagram = "No hay datos";
         else reserva.datosArtisticos.instagram = document.getElementById("instagram").value;
-        if(document.getElementById("spotify").value == "") reserva.datosArtisticos.spotify = "No hay datos";
+        if(document.getElementById("spotify").value == "" || document.getElementById("spotify").value == null) reserva.datosArtisticos.spotify = "No hay datos";
         else reserva.datosArtisticos.spotify = document.getElementById("spotify").value;
     }
     else
