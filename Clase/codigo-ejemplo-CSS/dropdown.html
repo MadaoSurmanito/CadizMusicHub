@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Dropdown menú</title>
+		<style type="text/css">
+			:root {
+				--primary-color: royalblue;
+				--secondary-color: powderblue;
+				--border-type: 2px solid var(--primary-color);
+			}
+		
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: arial,sans-serif;
+			}
+
+			header { 
+				margin: 1em;
+			}
+
+			a { 
+				text-decoration: none;		/* Elimina la decoración habitual de los enlaces */
+			}
+
+			nav {
+				position: relative;			/* ul se coloca de forma absoluta al primer elemento padre que no sea static */
+				font-weight: bold;			/* De ahí que nav, que es un padre, se ponga relativo */
+
+				color: white;
+				text-align: center;
+				padding: 0.2em;
+				width: 10em;
+				background-color: var(--primary-color);
+			}
+
+			nav ul {
+				display: none;
+				position: absolute;
+				left: 0;
+				padding: 0;
+				margin: 0;
+				width: 10em;
+				border: var(--border-type);
+				list-style: none;
+			}
+			
+			nav:hover ul {
+				display: block;
+			}
+			
+			nav ul li {
+				border-top: var(--border-type);
+				background-color: white;
+			}
+			
+			nav ul li:hover {
+				background-color: var(--secondary-color);
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>Menú
+				<ul>
+					<li><a href="#">Inicio</a></li>
+					<li><a href="#">Noticias</a></li>
+					<li><a href="#">Artículos</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Contacto</a></li>
+				</ul>
+			</nav>
+			
+			<p>Bienvenidos a la página web...</p>
+		</header>
+	</body>
+</html>

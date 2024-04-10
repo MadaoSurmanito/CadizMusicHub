@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Bloques anidados</title>
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+	<style type="text/css" media="screen">
+		*{
+			font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+		}
+		div {
+			border: 5px solid black;
+		}
+		
+		ul {
+			color: green;
+		}
+
+		div>ul>li {
+			color: orange;
+		}
+
+		ul>ul>li {
+			color: black;
+		}
+		.divCalendario {
+			width: 500px;
+			height: 500px;
+			border-color: red;
+		}
+
+		.divHorasDiasMeses {
+			width: 300px;
+			height: 300px;
+			margin: 10px;
+			border-color: blue;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="divCalendario">
+		<div class="divHorasDiasMeses">
+			<div>
+				<ul>
+					<li>Horas</li>
+					<li>Días</li>
+					<ul>
+						<li>Lunes</li>
+						<li>Martes</li>
+						<li>Miércoles</li>
+						<li>...</li>
+					</ul>
+					<li>Meses</li>
+					<ul>
+						<li>Enero</li>
+						<li>Febrero</li>
+						<li>Marzo</li>
+						<li>...</li>
+					</ul>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

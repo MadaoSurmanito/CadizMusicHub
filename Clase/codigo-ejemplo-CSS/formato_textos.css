@@ -1,0 +1,55 @@
+h1,h2,h3,h4{
+	font-family: "Alegreya Sans SC", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+*{
+	font-family:Arial;
+}
+
+li em{
+	font-weight: bold;
+}
+
+h1, em{
+	text-decoration: underline;
+}
+
+/*Elemento ul hijo directo de ul*/
+ul > ul{ font-size: .8em; }
+
+a:hover{
+	text-decoration: underline;
+}
+
+/* Clases */
+
+.no-decoration{
+	text-decoration: none;
+}
+
+.subtitulos{
+	color:red;
+}
+
+.tam-px{ font-size: 12px; }
+.tam-em{ font-size: 1.6em; }
+.tam-porcentaje{ font-size: 50%; }
+
+.underline{ text-decoration: underline; }
+.line-through{ text-decoration: line-through; }
+.ilegible{ text-decoration: underline overline line-through; }
+
+.negrita{ font-weight: bold; }
+.normal{ font-weight: normal; }
+
+.divTextoCentrado{ 
+	text-align:center; 
+	width: 200px; 
+	border: 2px solid blue;
+}
+
+.verde{ color: green; }
+.amarillo{ color: rgb(255, 255, 0); }
+.azul{ color:hsl(240, 100%, 50%); }
+.marron{ color:#a52a2a; }

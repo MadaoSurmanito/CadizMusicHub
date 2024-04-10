@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Mejores videojuegos</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			span{
+				  width: 250px; 
+				  display: inline-block;
+			}
+		</style>
+		<script type="text/javascript">
+		
+			// VIDEOJUEGOS EN EL ARRAY
+			let videojuegos = ["Golden Axe", "Re-volt", "Super Mario Bros 3", "Commandos - Behind enemy lines", "Bishi Bashi", "Indiana Jones y la última cruzada"];
+
+			function listar (array) {
+				let i=0;
+				let htmlGenerado = "<ul>";   
+				for (i = 0; i < array.length; i++) {
+					/* Usamos la función de plantilla de cadena para añadir un id diferente.
+					  También podría haber definido un atributo tipo "data-*" para guardar estos índices aparte del atributo id:
+					  https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes */
+				  	htmlGenerado = htmlGenerado + "<li>" + "<span>" + array[i] + "</span>" + ` <button class="borrado" id="boton${i}">Eliminar</button></li>`;
+				}
+				
+				return htmlGenerado + "</ul>";
+			};
+
+			// Las funciones mostrar/crear/eliminar
+			function mostrarListado() { 
+					document.getElementById("listado").innerHTML = listar(videojuegos);		//Agregamos contenido HTML
+			};
+			
+			function crearItem() {
+				videojuegos.push(document.getElementById("videojuegoNuevo").value);			//Añadir un nuevo videojuego al array
+				mostrarListado();
+			};
+			
+			function eliminarItem(i) {
+				videojuegos.splice(i.substring(5),1);		//El substring le quita la palabra boton del id. El splice elimina un elemento a partir de esa posición.
+				mostrarListado();
+			};
+		
+			// Los listeners
+			document.addEventListener('DOMContentLoaded', () => mostrarListado());
+			document.addEventListener('click', function(ev){	//Con delegación de listeners
+				if      (ev.target.matches('#crear'))    crearItem();
+				else if (ev.target.matches('.borrado'))  eliminarItem(ev.target.id);
+			})
+    	</script>
+	</head>
+	<body>
+		<h2>Listado de los mejores videojuegos</h2>
+		<div id="listado"> </div>
+		
+		<p>Nuevo videojuego: </p> 
+		<input type="text" id="videojuegoNuevo"> 
+		
+		<button id="crear">Añadir</button>
+	</body>
+</html>

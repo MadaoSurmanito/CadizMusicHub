@@ -1,0 +1,14 @@
+{
+    "movies":[
+        {
+            "title":  "Jurassic Park",
+            "director":  "Steven Spielberg",
+            "year": "1993"
+        },
+        {
+            "title":  "The Lion King",
+            "director":  ["Rob Minkoff", "Roger Allers"],
+            "year": "1994"
+        }
+    ]
+}

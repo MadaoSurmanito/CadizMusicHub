@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Posicionando elementos</title>
+		<link rel="stylesheet" type="text/css" href="posicion_elems.css">
+	</head>
+	<body>
+
+		<div class="contenedor">
+			<p><span>Posición static (por defecto)</span>: Las cajas se posicionan una debajo de la otra.</p>
+			<div class="caja fondo-azul"></div>
+			<div class="caja fondo-verde"></div>
+		</div>
+
+		<div class="contenedor">
+			<p><span>Posición relative:</span> La caja verde está desplazada de su posición normal con la propiedad left 50px. </p>
+			<div class="caja fondo-azul"></div>
+			<div class="caja fondo-verde relative izqda"></div>
+		</div>
+
+		<div class="contenedor">
+			<p><span>Posición absolute:</span> La caja verde se posiciona de forma absoluta respecto a la etiqueta <code>html</code> con propiedad left 50px.</p>
+			<div class="caja fondo-azul"></div>
+			<div class="caja fondo-verde absolute izqda"></div>
+		</div>
+
+		<div class="contenedor relative">
+			<p><span>Posición absolute:</span> Sin embargo, si queremos que se posicione de forma absoluta respecto al contenedor padre, este último no puede ser static.
+			En este caso, el contenedor es relative, y la caja verde se posiciona respecto a este con propiedad left 50px y top 100px. </p>	
+			<div class="caja fondo-azul"></div>
+			<div class="caja fondo-verde absolute izqda arriba"> </div>
+			<br/>
+			<p>Con respecto al contenedor previo ¿Ves que la caja verde está un poco más a la derecha? Eso es porque toma de referencia el contenedor y no la etiqueta <code>html</code>. </p>
+		</div>
+
+		<div class="contenedor">
+			<p><span>Posición fixed: </span>Ahora se toma a la ventana del navegador de referencia. Prueba a ponerle la clase "fixed" a la caja verde 
+			par ver el efecto (inicialmente está desactivado para que no nos moleste).</p>
+			<div class="caja fondo-azul"></div>
+			<div class="caja fondo-verde izqda arriba"> </div>
+		</div>
+
+		<div class="contenedor">
+			<p><span>Posición float: </span>En este caso, las cajas flotan a la izquierda. </p>
+			<div class="caja fondo-azul float-izqda"></div>
+			<div class="caja fondo-verde float-izqda"> </div>
+			
+			<p>Puedes probar ahora a flotar la caja verde al lado derecho.</p>
+			<p>¿Qué pasa si le quitas al párrafo <code>p</code> la propiedad clear?</p>
+		</div>
+	</body>
+</html>

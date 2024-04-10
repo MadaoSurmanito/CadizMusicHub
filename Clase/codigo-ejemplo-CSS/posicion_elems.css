@@ -1,0 +1,65 @@
+body {
+	font-family: helvetica,sans-serif;
+	margin: 30px;
+	padding: 0;
+	background-color: bisque;
+}
+
+p {
+	padding-left: 20px;
+	clear: both;
+}
+
+span{
+	font-weight: bold;
+}
+
+.contenedor {
+	border: 3px solid black;
+	margin-bottom: 20px;
+	width: 800px;
+	height: 300px;
+	background-color: #fefefe;
+}
+
+.caja {
+	margin: 20px;
+	width: 100px;
+	height: 100px;
+}
+
+.fondo-verde{
+	background-color: green; 
+}
+
+.fondo-azul{
+	background-color: lightblue;
+}
+
+.relative{
+	position: relative; /* Esto es crucial para que funcione el posicionamiento absoluto */
+}
+
+.absolute{
+	position: absolute;
+}
+
+.fixed{
+	position: fixed;
+}
+
+.float-izqda{
+	float: left;
+}
+
+.float-drcha{
+	float: right;
+}
+
+.izqda {
+	left: 50px;
+}
+
+.arriba{
+	top: 100px;
+}

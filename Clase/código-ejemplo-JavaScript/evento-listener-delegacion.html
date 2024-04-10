@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Evento</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+
+    <script type="text/javascript">
+      document.addEventListener("click", function (ev) {
+        if (ev.target.matches(".botonHola")) saludar();
+        else if (ev.target.matches(".botonAdios")) despedir();
+      });
+
+      function saludar() {
+        alert("HOLA");
+      }
+
+      function despedir() {
+        alert("ADIOS");
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Eventos</h1>
+    <input type="button" class="botonHola" value="Botón HOLA" />
+    <input type="button" class="botonHola" value="Botón HOLA" />
+    <input type="button" class="botonHola" value="Botón HOLA" />
+    <input type="button" class="botonHola" value="Botón HOLA" />
+    <br />
+    <br />
+    <input type="button" class="botonAdios" value="Botón ADIÓS" />
+  </body>
+</html>

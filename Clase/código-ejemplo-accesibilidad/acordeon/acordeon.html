@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordeón</title>
+    <link rel="stylesheet" href="acordeon.css">
+</head>
+<body>
+    <div id="accordionGroup" class="accordion">
+        <h3>
+          <button type="button" aria-expanded="true" class="accordion-trigger" aria-controls="sect1" id="accordion1id">
+            <span class="accordion-title">
+              Información personal
+              <span class="accordion-icon"></span>
+            </span>
+          </button>
+        </h3>
+        <div id="sect1" role="region" aria-labelledby="accordion1id" class="accordion-panel">
+          <div>
+            
+            <fieldset>
+              <p>
+                <label for="cufc1">Nombre<span aria-hidden="true">*</span>:</label>
+                <input type="text" value="" name="Name" id="cufc1" class="required" required>
+              </p>
+              <p>
+                <label for="cufc2">Email<span aria-hidden="true">*</span>:</label>
+                <input type="text" value="" name="Email" id="cufc2" aria-required="true">
+              </p>
+              <p>
+                <label for="cufc3">Teléfono:</label>
+                <input type="text" value="" name="Phone" id="cufc3">
+              </p>
+              <p>
+                <label for="cufc4">Extensión:</label>
+                <input type="text" value="" name="Ext" id="cufc4">
+              </p>
+              <p>
+                <label for="cufc5">País:</label>
+                <input type="text" value="" name="Country" id="cufc5">
+              </p>
+            </fieldset>
+          </div>
+        </div>
+        <h3>
+          <button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect2" id="accordion2id">
+            <span class="accordion-title">
+              Dirección de facturación
+              <span class="accordion-icon"></span>
+            </span>
+          </button>
+        </h3>
+        <div id="sect2" role="region" aria-labelledby="accordion2id" class="accordion-panel" hidden="">
+          <div>
+            <fieldset>
+              <p>
+                <label for="b-add1">Dirección 1:</label>
+                <input type="text" name="b-add1" id="b-add1">
+              </p>
+              <p>
+                <label for="b-add2">Dirección 2:</label>
+                <input type="text" name="b-add2" id="b-add2">
+              </p>
+              <p>
+                <label for="b-city">Ciudad:</label>
+                <input type="text" name="b-city" id="b-city">
+              </p>
+              <p>
+                <label for="b-state">Provincia:</label>
+                <input type="text" name="b-state" id="b-state">
+              </p>
+              <p>
+                <label for="b-zip">Código postal:</label>
+                <input type="text" name="b-zip" id="b-zip">
+              </p>
+            </fieldset>
+          </div>
+        </div>
+        <h3>
+          <button type="button" aria-expanded="false" class="accordion-trigger" aria-controls="sect3" id="accordion3id">
+            <span class="accordion-title">
+              Dirección de envío
+              <span class="accordion-icon"></span>
+            </span>
+          </button>
+        </h3>
+        <div id="sect3" role="region" aria-labelledby="accordion3id" class="accordion-panel" hidden="">
+          <div>
+            <fieldset>
+              <p>
+                <label for="m-add1">Dirección 1:</label>
+                <input type="text" name="m-add1" id="m-add1">
+              </p>
+              <p>
+                <label for="m-add2">Dirección 2:</label>
+                <input type="text" name="m-add2" id="m-add2">
+              </p>
+              <p>
+                <label for="m-city">Ciudad:</label>
+                <input type="text" name="m-city" id="m-city">
+              </p>
+              <p>
+                <label for="m-state">Estado:</label>
+                <input type="text" name="m-state" id="m-state">
+              </p>
+              <p>
+                <label for="m-zip">Código postal:</label>
+                <input type="text" name="m-zip" id="m-zip">
+              </p>
+            </fieldset>
+          </div>
+        </div>
+      </div> 
+      <script src="acordeon.js"></script>     
+</body>
+</html>

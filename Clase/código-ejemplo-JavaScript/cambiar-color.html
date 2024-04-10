@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Cambiar el color de fondo - JavaScript</title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			/* Función para cambiar el color */
+			function cambiaColor(){
+				let color = prompt("Por favor, introduzca el nombre de color 'blue' o 'red'");
+				if(color == 'blue' || color == 'red')
+				{
+					document.bgColor = color;
+				}
+				// 2º) EDITAR: asegurar que el color introducido sea válido antes de que se ponga. Sino, no hacer nada. 
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Cambiar el color de fondo - JavaScript</h1>
+		<script type="text/javascript">
+		  	// 1º) COMPLETAR: Invocar la función
+			cambiaColor();
+			
+		</script>
+	</body>
+</html>

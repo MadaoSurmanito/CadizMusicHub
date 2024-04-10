@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Estructura básica usando propiedades flexbox </title>
+	
+		<style>
+			html body {
+				margin: 0;
+				font-size: 16px;
+				box-sizing: border-box;		/* Para que considere el borde como parte del contenido de la caja */
+			}
+			
+			header, nav, section, aside, footer {
+				border: 2px solid blue;
+				padding: 1em;
+				font-size: 1.2em;
+			}
+			
+			#contenedorPrincipal {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;	
+				justify-content: space-around;		
+			}
+			
+			#contenedorPrincipal section {
+				flex: 2 0;				/* Este elemento crece hasta dos veces más rápido que los otros elementos 
+										flexibles en el mismo contenedor con valor 1 (aside y nav en este caso) */
+			}
+			
+			#contenedorPrincipal aside #contenedorPrincipal nav {
+				flex: 1 0;				
+			}
+				
+			@media all and (max-width: 650px) {
+				#contenedorPrincipal { 
+					flex-flow: column;	/* Flex-flow es un shortcut para ajustar de una vez flex-direction y flex-wrap */
+				}
+			}
+
+			aside > div {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 300px;
+				height: 200px;
+				background-color: lightskyblue;
+			}	
+
+			aside > div > p {
+				width: 150px;
+				text-align: center;
+			}				
+		</style>
+	</head>
+
+	<body>
+		<header>
+			Cabecera PNET
+		</header>
+		
+		<div id="contenedorPrincipal">
+			<nav>
+				<h3>Índice principal</h3>
+				<ul>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JavaScript</li>
+					<li>Accesibilidad</li>
+				</ul>
+			</nav>
+
+			<section>
+			  <h3> Sección HTML</h3>
+			  <article>
+				<h4>Usar las etiquetas de la web semántica</h4>
+				<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum ratione exercitationem...</p>
+			  </article>
+			  <article>
+				<h4>Poner el contenido de la web en un orden lógico </h4>
+				<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum ratione exercitationem...</p>
+			  </article>
+			  <article>
+				<h4>Usa las etiquetas apropiadas (si tienes un encabezado, usa una etiqueta hX) </h4>
+				<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum ratione exercitationem...</p>
+			  </article>
+			  <article>
+				<h4>Usa siempre el validador </h4>
+				<p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum ratione exercitationem...</p>
+			  </article>
+			</section>
+			<aside>
+				<h3>Consejos:</h3>
+				<ol>
+					<li>Usar width y height en img.</li> 
+					<li>No abusar de br.</li>
+				</ol>
+				<h3>Centrando con flexbox:</h3>
+				<div>
+					<p>Texto centrado con flexbox</p>
+				</div>
+			</aside>
+		 </div>
+		
+		<footer>
+			Pie de página
+		</footer>
+	</body>
+</html>

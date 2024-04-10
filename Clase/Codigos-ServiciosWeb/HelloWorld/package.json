@@ -1,0 +1,19 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "Hello word para el NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "helloworld"
+  ],
+  "author": "Alejandro Ramos Rodriguez",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
+    "morgan": "^1.10.0"
+  }
+}

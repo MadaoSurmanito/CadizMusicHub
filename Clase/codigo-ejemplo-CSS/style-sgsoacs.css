@@ -1,0 +1,130 @@
+/*
+  ┌─────────────────────────────────────────────────────────────────────────────
+  │ CSS3 for simple HTML5 web pages
+  │
+  │ Francisco Palomo-Lozano (https://ucase.uca.es/palomo)
+  │
+  │ Modified by Pedro Delgado-Pérez (https://ucase.uca.es/pdelgadoperez)
+  └─────────────────────────────────────────────────────────────────────────────
+*/
+
+/* Body */
+
+body {
+    color: SlateGray;
+    margin: 4ex 4em;
+    font-family: "Lato", sans-serif;
+    font-size: large;
+}
+
+/* Header */
+
+header {
+    padding-bottom: 2ex;
+    border-bottom: 1px solid Silver;
+}
+
+main {
+    margin-top: 4ex;
+    margin-bottom: 4ex;
+}
+
+#html-logo { float: left }
+
+/* Footer */
+
+footer { border-top: 1px solid Silver }
+
+#logos-footer { 
+	display: flex; 
+	justify-content: space-between; 
+	align-items: center;
+	margin: auto; 
+	width: 90%; 
+}
+
+/* Aside */
+
+aside{ 
+	display: flex;
+	justify-content: space-around; 
+	flex-wrap: wrap;
+	margin-bottom: 4ex; 
+	padding: 2ex 0;
+	background-color: LightGrey; 
+	min-width: fit-content;
+}
+
+aside article { padding: 0 2ex }
+aside li { margin-bottom: 3ex }
+
+/* Headings */
+
+h1 { color: Black }
+h2 { color: Gray }
+h3 { color: DarkGray }
+
+/* Heading group for title and subtitle */
+
+hgroup { margin-top: 6ex }
+hgroup > h1 + p  { color: Black }
+
+/* Paragraphs and spans */
+	     
+p { text-align: justify }
+span { color: DodgerBlue }
+
+/* Tables */
+
+table { background-color: Linen }
+th { background-color: Tan; padding: 0.75ex }
+td { padding: 0.5ex 1em }
+td:first-of-type { background-color: Snow; width: 120px }
+
+/* Anchors */
+
+a { color: DodgerBlue; font-weight: bolder; text-decoration: none }
+a:hover { color: RoyalBlue }
+
+/* Navigation links */
+
+nav {
+    padding-bottom: 1.5ex;
+    border-bottom: 1px solid Silver;
+	overflow: hidden;
+}
+
+nav ul { margin: 0; padding: 0; float: right }
+nav li { list-style: none; float: left; padding-left: 2em }
+nav li a { color: Gray }
+nav li a:hover { color: DimGray }
+
+/* Form */
+form { max-width: 450px; }
+
+label {
+	display: block;
+	margin-bottom: 2ex;
+	font-weight: bold;
+}
+
+input, textarea, select {
+	width: 100%;
+	padding: 0.6em;
+	margin-bottom: 2.4ex;
+	box-sizing: border-box;
+}
+
+/* Specific elements */
+
+.red { color: red }
+.gold { color: gold }
+.black { color: black } 
+
+
+/* Media query */
+
+@media screen and (max-width: 750px) {
+	#logos-footer { flex-direction: column } 
+	#logos-footer img { margin-top: 3ex } 
+}

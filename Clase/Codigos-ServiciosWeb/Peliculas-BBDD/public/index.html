@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Películas</title>
+
+	<script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+	<script type="text/javascript" src="js/wsinvocations.js"></script>
+  </head>
+  <body>
+	<h1>Películas Cliente</h1>
+
+	<input type="button" value="GET MOVIE 'The Lion King'" onclick="getMovie('65fbfbc101fd81da9bb5e4c2')" />
+	<input type="button" value="POST MOVIE 'Dunkirk'" onclick="postMovie()" />
+	<input type="button" value="GET MOVIE 'Dunkirk'" onclick="getMovie('65fbfb6a01fd81da9bb5e4c1')" />
+	<input type="button" value="GET MOVIES" onclick="getAllMovies()" />
+	<input type="button" value="DELETE DUNKIRK" onclick="deleteMovie('65fbfe2801fd81da9bb5e4c3')" />
+	<input type="button" value="PUT DUNKIRK" onclick="putMovie('65fbfb6a01fd81da9bb5e4c1')" />
+
+	<h3 id="resPelicula"></h3>
+  </body>
+</html>

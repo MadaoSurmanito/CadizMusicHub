@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Evento</title>
+		<meta charset="UTF-8">
+
+  		<script type="text/javascript"> 
+			document.addEventListener('DOMContentLoaded', function(){        
+				let but = document.getElementById("b1");       
+				but.addEventListener("click", () => saludar());
+				but.addEventListener("mouseout", () => despedir());
+			})
+
+			function saludar(){
+				alert('HOLA');
+			}
+
+			function despedir(){
+				alert('ADIÓS');
+			}
+  		</script>
+</head>
+<body>
+   <h1>Evento con listener</h1>
+   <input type="button" id ="b1" value="Saludar">
+</body>
+</html>
