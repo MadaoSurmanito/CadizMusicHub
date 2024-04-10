@@ -1,0 +1,1 @@
+El archivo wsinvocations.js con las invocaciones jQuery de la parte del cliente está en la carpeta public\js

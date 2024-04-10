@@ -1,0 +1,803 @@
+{
+	"info": {
+		"_postman_id": "e82b2378-2edc-4430-9d61-2441f2e037cb",
+		"name": "reservas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33586579"
+	},
+	"item": [
+		{
+			"name": "GetReservas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EjemploGetReservas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reserva",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reserva"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "632"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"278-qx7p76/nsaUGsdjbNJeCPiHb64Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Mar 2024 11:46:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"1\",\n        \"Nombre\": \"Juan\",\n        \"Apellidos\": \"Perez\",\n        \"Fecha de Nacimiento\": \"01/01/1990\",\n        \"Correo electrónico\": \"juan@correo.com\",\n        \"Telefono\": 123456789,\n        \"nº participantes sala\": 2,\n        \"Fecha de reserva\": \"02/03/2024\",\n        \"Sala\": \"Sala 1\",\n        \"tramo horario\": [\n            10,\n            11,\n            12\n        ],\n        \"Nombre artista/banda\": \"Juanito\",\n        \"Género musical\": \"Rock\",\n        \"Cuenta de instagram\": \"@juanito\",\n        \"Perfil de Spotify\": \"juanito\"\n    },\n    {\n        \"id\": \"2\",\n        \"Nombre\": \"Ana\",\n        \"Apellidos\": \"Lopez\",\n        \"Fecha de Nacimiento\": \"02/02/1991\",\n        \"Correo electrónico\": \"ana@correo.com\",\n        \"Telefono\": 987654321,\n        \"n participantes estudio\": 2,\n        \"Fecha de reserva\": \"02/03/2024\",\n        \"Estudio\": \"Estudio 1\",\n        \"tramo horario\": [\n            10,\n            11,\n            12\n        ],\n        \"tecnico\": true\n    }\n]"
+				},
+				{
+					"name": "CasoErrorGetReservas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/estoDaError",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estoDaError"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'none'"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "150"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Mar 2024 12:01:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Cannot GET /estoDaError</pre>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "GetReservasEmail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reservas/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EjemploGetReservasEmail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reservas/juan@correo.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"juan@correo.com"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "367"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16f-W4QJaate+pqZgP5UewcEEdaAYHI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Mar 2024 11:47:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"1\",\n        \"Nombre\": \"Juan\",\n        \"Apellidos\": \"Perez\",\n        \"Fecha de Nacimiento\": \"01/01/1990\",\n        \"Correo electrónico\": \"juan@correo.com\",\n        \"Telefono\": 123456789,\n        \"nº participantes sala\": 2,\n        \"Fecha de reserva\": \"02/03/2024\",\n        \"Sala\": \"Sala 1\",\n        \"tramo horario\": [\n            10,\n            11,\n            12\n        ],\n        \"Nombre artista/banda\": \"Juanito\",\n        \"Género musical\": \"Rock\",\n        \"Cuenta de instagram\": \"@juanito\",\n        \"Perfil de Spotify\": \"juanito\"\n    }\n]"
+				},
+				{
+					"name": "CasoVacioGetReservasEmail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reservas/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Mar 2024 12:00:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				}
+			]
+		},
+		{
+			"name": "PostReserva",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": \"3\",\r\n        \"Nombre\": \"Ana\",\r\n        \"Apellidos\": \"Lopez\",\r\n        \"Fecha de Nacimiento\": \"02/02/1991\",\r\n        \"Correo electrónico\": \"ana@correo.com\",\r\n        \"Telefono\": 987654321,\r\n        \"nº participantes sala\": 2,\r\n        \"Fecha de reserva\": \"02/03/2024\",\r\n        \"Sala\": \"Sala 2\",\r\n        \"tramo horario\": [14, 15, 16],\r\n        \"Nombre artista/banda\": \"Anita\",\r\n        \"Género musical\": \"Pop\",\r\n        \"Cuenta de instagram\": \"@anita\",\r\n        \"Perfil de Spotify\": \"anita\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EjemploReserva",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": \"3\",\r\n        \"Nombre\": \"Ana\",\r\n        \"Apellidos\": \"Lopez\",\r\n        \"Fecha de Nacimiento\": \"02/02/1991\",\r\n        \"Correo electrónico\": \"ana@correo.com\",\r\n        \"Telefono\": 987654321,\r\n        \"nº participantes sala\": 2,\r\n        \"Fecha de reserva\": \"02/03/2024\",\r\n        \"Sala\": \"Sala 2\",\r\n        \"tramo horario\": [14, 15, 16],\r\n        \"Nombre artista/banda\": \"Anita\",\r\n        \"Género musical\": \"Pop\",\r\n        \"Cuenta de instagram\": \"@anita\",\r\n        \"Perfil de Spotify\": \"anita\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-y1qo290smen8aNn27g/g4Y0DagI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Mar 2024 11:47:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "reserva created!"
+				}
+			]
+		},
+		{
+			"name": "PutReservaID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"2\",\r\n    \"Nombre\": \"Ana\",\r\n    \"Apellidos\": \"Lopez\",\r\n    \"Fecha de Nacimiento\": \"02/02/1991\",\r\n    \"Correo electrónico\": \"ana@correo.com\",\r\n    \"Telefono\": 987654321,\r\n    \"n participantes estudio\": 2,\r\n    \"Fecha de reserva\": \"02/03/2024\",\r\n    \"Estudio\": \"Estudio 1\",\r\n    \"tramo horario\": [13, 14, 15],\r\n    \"tecnico\": false\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reservas/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EjemploPutReservaID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2\",\r\n    \"Nombre\": \"Ana\",\r\n    \"Apellidos\": \"Lopez\",\r\n    \"Fecha de Nacimiento\": \"02/02/1991\",\r\n    \"Correo electrónico\": \"ana@correo.com\",\r\n    \"Telefono\": 987654321,\r\n    \"n participantes estudio\": 2,\r\n    \"Fecha de reserva\": \"02/03/2024\",\r\n    \"Estudio\": \"Estudio 1\",\r\n    \"tramo horario\": [13, 14, 15],\r\n    \"tecnico\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-/XA08/R86Zh/GwxzHSriH9806p4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Mar 2024 11:51:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "reserva updated!"
+				},
+				{
+					"name": "casoErrorPutReservaID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2\",\r\n    \"Nombre\": \"Ana\",\r\n    \"Apellidos\": \"Lopez\",\r\n    \"Fecha de Nacimiento\": \"02/02/1991\",\r\n    \"Correo electrónico\": \"ana@correo.com\",\r\n    \"Telefono\": 987654321,\r\n    \"n participantes estudio\": 2,\r\n    \"Fecha de reserva\": \"02/03/2024\",\r\n    \"Estudio\": \"Estudio 1\",\r\n    \"tramo horario\": [13, 14, 15],\r\n    \"tecnico\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"5"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12-8xqVpVnWZWmIcLarjKkdZrFPrzY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Mar 2024 12:07:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "reserva not found!"
+				}
+			]
+		},
+		{
+			"name": "DeleteReserva",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EjemploDeleteReserva",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11-S7wUpJss40G7uzy6uPI416NiJcQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Mar 2024 11:54:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "reservas deleted!"
+				}
+			]
+		},
+		{
+			"name": "DeleteReservaID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/reservas/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "EjemploDeleteReservaID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-Sdu3GFBS26yqPCXJZvo8NAvpIeo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Mar 2024 11:53:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "reserva deleted!"
+				},
+				{
+					"name": "casoErrorDeleteReservaID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"6"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12-8xqVpVnWZWmIcLarjKkdZrFPrzY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 17 Mar 2024 12:11:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "reserva not found!"
+				}
+			]
+		}
+	]
+}
